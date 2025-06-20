@@ -1,3 +1,32 @@
-<router-outlet></router-outlet>
-<app-header></app-header>
-<app-banner-principal></app-banner-principal>
+<app-top-bar></app-top-bar>
+<div class="main-bg">
+  <div class="container">
+    <app-banner-principal></app-banner-principal>
+  </div>
+</div>
+<div class="bg-blue">
+  <div class="container">
+    <app-planos></app-planos>
+  </div>
+</div>
+<div class="bg-orange">
+  <div class="container">
+    <app-clube-vantagens></app-clube-vantagens>
+  </div>
+</div>
+<div class="bg-blue">
+  <div class="container">
+    <app-depoimentos></app-depoimentos>
+  </div>
+</div>
+<div class="bg-blue-light">
+  <div class="container">
+    <app-info-bar></app-info-bar>
+  </div>
+</div>
+<div class="container">
+  <app-contato></app-contato>
+</div>
+<app-footer></app-footer>
+
+<router-outlet />

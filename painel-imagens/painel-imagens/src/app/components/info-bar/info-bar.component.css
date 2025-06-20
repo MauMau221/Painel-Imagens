@@ -1,0 +1,40 @@
+.info-bar-section {
+    background-color: #2d4a5a;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 80px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+    max-width: 250px;
+}
+
+.info-item mat-icon {
+    font-size: 40px;
+}
+
+.info-item span {
+    font-size: 14px;
+}
+
+/* --- RESPONSIVIDADE --- */
+
+@media (max-width: 992px) {
+    .info-bar-section {
+        flex-direction: column;
+        gap: 25px;
+        padding: 30px 40px;
+        text-align: center;
+    }
+    .info-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

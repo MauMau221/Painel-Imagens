@@ -1,7 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
 * , body {
     margin: 0px;
     padding: 0px;
     border: 0px;
     box-sizing: border-box;
+}
+html, body { height: 100%; }
+body { 
+    margin: 0; 
+    font-family: 'Montserrat', sans-serif; 
+    overflow-x: hidden;
+}
+
+.logo-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+.banner-container {
+    margin-top: 70px; /* Compensa a barra fixa e o logo */
+}
+
+@media (max-width: 768px) {
+  .banner-container {
+    margin-top: 50px;
+  }
+}
+
+.main-bg,
+.bg-blue,
+.bg-orange,
+.bg-blue-light {
+  width: 100%;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+@media (max-width: 1300px) {
+  .container {
+    max-width: 1000px;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 100%;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 }
