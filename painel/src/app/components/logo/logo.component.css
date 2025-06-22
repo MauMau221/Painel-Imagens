@@ -1,10 +1,8 @@
 .logo-bg {
-    width: 100%;
-    background: #2d4a5a;
+    width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0 30px 0;
 }
 
 .logo-img {
@@ -12,13 +10,4 @@
     max-width: 220px;
     width: 100%;
     height: auto;
-}
-
-@media (max-width: 768px) {
-    .logo-bg {
-        padding: 25px 0 20px 0;
-    }
-    .logo-img {
-        max-width: 140px;
-    }
 }

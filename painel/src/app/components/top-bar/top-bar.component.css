@@ -12,31 +12,50 @@
     backdrop-filter: blur(6px);
 }
 
-.content-wrapper {
+.top-bar-content {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
-    gap: 30px;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.top-bar-container p {
-    font-size: 13px;
+.top-bar-logo {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.top-bar-center {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-bar-center p {
+    font-size: 15px;
     font-weight: 500;
     margin: 0;
-    color: #d1d1d1;
+    color: #e0e0e0;
+}
+
+.top-bar-actions {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
 }
 
 .client-button {
     background-color: #f37f21;
     color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 20px;
+    padding: 12px 28px;
+    border-radius: 24px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 15px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     transition: background-color 0.3s;
     box-shadow: 0 2px 8px 0 rgba(0,0,0,0.10);
 }
@@ -46,21 +65,20 @@
 }
 
 .client-button mat-icon {
-    font-size: 18px;
+    font-size: 22px;
 }
 
 /* --- RESPONSIVIDADE --- */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .top-bar-container {
         padding: 10px 20px;
     }
-
-    .content-wrapper {
+    .top-bar-content {
         flex-direction: column;
         gap: 10px;
     }
-
-    .top-bar-container p {
-        display: none; /* Oculta o texto em telas muito pequenas */
+    .top-bar-center {
+        justify-content: center;
+        margin: 10px 0;
     }
 }
