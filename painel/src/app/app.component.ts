@@ -8,14 +8,12 @@ import { ContatoComponent } from './components/contato/contato.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { InfoBarComponent } from './components/info-bar/info-bar.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
-import { LogoComponent } from './components/logo/logo.component';
 
 @Component({
   selector: 'app-root',
   imports: [
     RouterOutlet,
     TopBarComponent,
-    LogoComponent,
     BannerPrincipalComponent,
     PlanosComponent,
     ClubeVantagensComponent,

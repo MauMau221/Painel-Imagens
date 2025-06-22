@@ -191,11 +191,14 @@
 }
 
 .telemedicina-card {
-    background-color: #00bcd4;
+    background-image: url('/assets/doutorJoia.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     border-radius: 15px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 30px;
     flex-grow: 1;
     color: white;
@@ -219,17 +222,6 @@
 .telemedicina-content .cta-button {
     width: auto;
     padding: 14px 35px;
-}
-
-.telemedicina-image {
-    width: 200px;
-    height: 150px;
-    /* Imagem será adicionada aqui */
-    background-color: rgba(255,255,255,0.2);
-    border-radius: 10px;
-}
-.telemedicina-image img {
-    max-width: 100%;
 }
 
 .credit-note {
