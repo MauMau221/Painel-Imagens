@@ -1,0 +1,64 @@
+.footer-section {
+    background-color: #333333;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    padding: 15px 80px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-info span {
+    font-size: 13px;
+    font-weight: 600;
+    color: #cccccc;
+}
+
+.contact-info strong {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.whatsapp-float {
+    background-color: #25d366;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float mat-icon {
+    font-size: 32px;
+}
+
+/* --- RESPONSIVIDADE --- */
+
+@media (max-width: 768px) {
+    .footer-section {
+        padding: 15px 20px;
+        justify-content: center;
+    }
+    .contact-info {
+        text-align: center;
+    }
+}
