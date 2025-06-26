@@ -190,40 +190,6 @@
     box-shadow: 0 8px 24px 0 rgba(243,127,33,0.25);
 }
 
-.telemedicina-card {
-    background-image: url('/assets/doutorJoia.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 30px;
-    flex-grow: 1;
-    color: white;
-}
-
-.telemedicina-content {
-    text-align: left;
-}
-
-.telemedicina-content p {
-    font-size: 22px;
-    font-weight: 600;
-    max-width: 280px;
-    margin: 0 0 20px 0;
-    line-height: 1.4;
-}
-.telemedicina-content strong {
-    font-weight: 800;
-}
-
-.telemedicina-content .cta-button {
-    width: auto;
-    padding: 14px 35px;
-}
-
 .credit-note {
     margin-top: 20px;
     font-size: 11px;
@@ -250,12 +216,5 @@
         width: 100%;
         max-width: 400px;
     }
-    .telemedicina-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-    .telemedicina-content {
-        text-align: center;
-    }
+
 }
