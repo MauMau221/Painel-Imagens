@@ -1,15 +1,10 @@
 .top-bar-container {
-    background: transparent;
+    background-color: #262660;
     color: #ffffff;
     font-family: 'Montserrat', sans-serif;
-    padding: 8px 80px;
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100vw;
     z-index: 2000;
-    box-shadow: 0 2px 12px 0 rgba(0,0,0,0.08);
-    backdrop-filter: blur(6px);
+    padding: 20px 40px;
 }
 
 .top-bar-content {
