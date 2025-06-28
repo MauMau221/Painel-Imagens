@@ -1,6 +1,6 @@
 .footer-section {
-    background-color: #262660;
-    color: #ffffff;
+    background-color: var(--bg-primary-dark);
+    color: var(--text-white);
     font-family: 'Montserrat', sans-serif;
     padding: 15px 80px;
     display: flex;
@@ -18,7 +18,7 @@
 .contact-info span {
     font-size: 13px;
     font-weight: 600;
-    color: #cccccc;
+    color: var(--text-secondary-gray);
 }
 
 .contact-info strong {
@@ -27,7 +27,7 @@
 }
 
 .whatsapp-float {
-    background-color: #25d366;
+    background-color: var(--bg-whatsapp-green);
     color: white;
     width: 55px;
     height: 55px;

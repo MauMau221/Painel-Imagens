@@ -1,10 +1,10 @@
 .top-bar-container {
-    background-color: #262660;
-    color: #ffffff;
+    background-color: var(--bg-primary-dark);
+    color: var(--text-white);
     font-family: 'Montserrat', sans-serif;
     width: 100vw;
     z-index: 2000;
-    padding: 20px 40px;
+    padding: 15px 80px;
 }
 
 .top-bar-content {
@@ -31,7 +31,7 @@
     font-size: 15px;
     font-weight: 500;
     margin: 0;
-    color: #e0e0e0;
+    color: var(--text-light-gray);
 }
 
 .top-bar-actions {
@@ -41,8 +41,8 @@
 }
 
 .client-button {
-    background-color: #f37f21;
-    color: #ffffff;
+    background-color: var(--bg-primary-orange);
+    color: var(--text-white);
     padding: 12px 28px;
     border-radius: 24px;
     text-decoration: none;
@@ -56,7 +56,7 @@
 }
 
 .client-button:hover {
-    background-color: #e0711b;
+    background-color: var(--bg-orange-hover);
 }
 
 .client-button mat-icon {

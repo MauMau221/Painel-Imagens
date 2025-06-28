@@ -1,6 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 
+/* Variáveis CSS para cores de fundo */
+:root {
+  /* Cores principais */
+  --bg-primary-dark: #bceafc;        /* Cor escura principal - header, footer, seções */
+  --bg-primary-orange: #36aef3;      /* Cor laranja principal - botões, destaques */
+  --bg-orange-hover: #c9eafd;        /* Hover do botão laranja */
+  
+  /* Cores do WhatsApp */
+  --bg-whatsapp-green: #25d366;      /* Cor verde do WhatsApp */
+  --bg-whatsapp-hover: #20b859;      /* Hover do botão WhatsApp */
+  
+  /* Cores neutras */
+  --bg-white: #ffffff;               /* Cor branca */
+  --bg-light-gray: #f4f4f4;          /* Cor cinza claro */
+  
+  /* Cores do clube de vantagens */
+  --bg-cyan-primary: #0acde7;        /* Cor azul claro */
+  --bg-cyan-hover: #0097a7;          /* Hover do botão azul */
+  --bg-orange-light: #ffb347;        /* Cor laranja claro para gradiente */
+
+  /* Variáveis CSS para cores de texto */
+  --text-white: #ffffff;             /* Texto branco - principal em fundos escuros */
+  --text-light-gray: #e0e0e0;        /* Texto cinza claro - secundário */
+  --text-blue-gray: #b0bfc7;         /* Texto cinza azulado - subtítulos */
+  --text-orange: #e78636;            /* Texto laranja - destaques e títulos */
+  --text-medium-gray: #a0a0a0;       /* Texto cinza médio - créditos */
+  --text-secondary-gray: #cccccc;    /* Texto cinza claro - secundário no footer */
+  --text-dark-gray: #333333;         /* Texto cinza escuro - principal em fundos claros */
+  --text-description: #757575;       /* Texto cinza médio - descrições */
+}
+
 * , body {
     margin: 0px;
     padding: 0px;

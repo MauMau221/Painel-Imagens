@@ -1,13 +1,13 @@
 .planos-section {
-    background-color: #262660;
+    background-color: var(--bg-primary-dark);
     padding: 60px 80px;
-    color: #ffffff;
+    color: var(--text-white);
     font-family: 'Montserrat', sans-serif;
     text-align: center;
 }
 
 .section-title p {
-    color: #b0bfc7;
+    color: var(--text-blue-gray);
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 0;
@@ -16,7 +16,7 @@
 }
 
 .section-title h2 {
-    color: #f37f21;
+    color: var(--text-orange);
     font-size: 2.2rem;
     font-weight: 800;
     letter-spacing: 1px;
@@ -56,7 +56,7 @@
 .credit-note {
     margin-top: 20px;
     font-size: 11px;
-    color: #a0a0a0;
+    color: var(--text-medium-gray);
 }
 
 @media (max-width: 1024px) {
