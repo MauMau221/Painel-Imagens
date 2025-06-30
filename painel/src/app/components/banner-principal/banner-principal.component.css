@@ -4,7 +4,8 @@
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
   position: relative;
-  min-height: 300px;
+  min-height: 500px;
+  max-height: 500px;
   width: 100%;
   aspect-ratio: 16/5;
   padding: 10px;

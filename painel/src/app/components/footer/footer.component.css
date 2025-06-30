@@ -2,28 +2,99 @@
     background-color: var(--bg-primary-dark);
     color: var(--text-white);
     font-family: 'Montserrat', sans-serif;
-    padding: 15px 80px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+    padding: 40px 60px 20px 60px;
     position: relative;
 }
 
-.contact-info {
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 180px;
+}
+
+.footer-logo-desc {
+    max-width: 350px;
+}
+
+.footer-logo {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 8px;
+    margin-bottom: 10px;
 }
-
-.contact-info span {
-    font-size: 13px;
+.footer-logo img {
+    height: 40px;
+    width: auto;
+    border-radius: 6px;
+    background: #fff;
+}
+.footer-logo-text {
+    font-size: 18px;
     font-weight: 600;
+    color: #b3e0ff;
+    margin-left: 2px;
+}
+.footer-desc {
+    font-size: 13px;
+    margin-bottom: 10px;
     color: var(--text-secondary-gray);
 }
+.footer-cnpj, .footer-criado {
+    font-size: 11px;
+    color: #b3e0ff;
+    margin-bottom: 2px;
+}
 
-.contact-info strong {
-    font-size: 20px;
+.footer-menu h4,
+.footer-politica h4,
+.footer-social h4 {
+    font-size: 17px;
+    margin-bottom: 10px;
     font-weight: 700;
+}
+.footer-menu ul,
+.footer-politica ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer-menu li,
+.footer-politica li {
+    margin-bottom: 7px;
+}
+.footer-menu a,
+.footer-politica a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+.footer-menu a:hover,
+.footer-politica a:hover {
+    color: #b3e0ff;
+}
+
+.footer-social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+.footer-social-icons a {
+    color: var(--text-white);
+    font-size: 22px;
+    transition: color 0.2s;
+}
+.footer-social-icons a:hover {
+    color: #b3e0ff;
 }
 
 .whatsapp-float {
@@ -46,19 +117,32 @@
 .whatsapp-float:hover {
     transform: scale(1.1);
 }
-
 .whatsapp-float mat-icon {
     font-size: 32px;
 }
 
-/* --- RESPONSIVIDADE --- */
-
-@media (max-width: 768px) {
-    .footer-section {
-        padding: 15px 20px;
-        justify-content: center;
+@media (max-width: 1024px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
     }
-    .contact-info {
-        text-align: center;
+    .footer-section {
+        padding: 30px 20px 15px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-section {
+        padding: 20px 5px 10px 5px;
+    }
+    .footer-logo img {
+        height: 32px;
+    }
+    .footer-logo-text {
+        font-size: 15px;
+    }
+    .footer-col {
+        min-width: 120px;
     }
 }
