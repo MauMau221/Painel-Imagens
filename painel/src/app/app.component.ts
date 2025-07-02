@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { BannerPrincipalComponent } from './components/banner-principal/banner-principal.component';
 import { PlanosComponent } from './components/planos/planos.component';
 import { ClubeVantagensComponent } from './components/clube-vantagens/clube-vantagens.component';
@@ -11,7 +10,6 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
 @Component({
   selector: 'app-root',
   imports: [
-    RouterOutlet,
     TopBarComponent,
     BannerPrincipalComponent,
     PlanosComponent,

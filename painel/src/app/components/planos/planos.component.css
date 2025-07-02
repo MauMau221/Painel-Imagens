@@ -25,65 +25,27 @@
 
 .planos-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-items: flex-start;
     gap: 25px;
     margin-bottom: 20px;
-    flex-wrap: wrap;
-    align-items: flex-start;
 }
 
 .plano-card {
-    background: none;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    box-shadow: none;
-    width: 100%;
+    width: 20%;
     max-width: 320px;
-    margin-bottom: 0;
+    min-width: 300px;
 }
 
 .plano-img {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    border-radius: 10px;
-    display: block;
 }
 
 .credit-note {
     margin-top: 20px;
     font-size: 11px;
     color: var(--text-medium-gray);
-}
-
-@media (max-width: 1024px) {
-    .planos-container {
-        gap: 24px 12px;
-    }
-    .plano-card {
-        max-width: 45vw;
-    }
-    .plano-img {
-        max-height: 220px;
-    }
-}
-
-@media (max-width: 768px) {
-    .planos-section {
-        padding: 40px 10px;
-    }
-    .planos-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 18px 0;
-    }
-    .plano-card {
-        max-width: 100%;
-    }
-    .plano-img {
-        max-height: 180px;
-    }
 }

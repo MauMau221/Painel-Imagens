@@ -1,5 +1,5 @@
 .logo-bg {
-    width: 25%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +7,8 @@
 
 .logo-img {
     display: block;
-    max-width: 220px;
+    padding: 5px;
+    max-width: 100px;
     width: 100%;
     height: auto;
 }
