@@ -9,7 +9,16 @@
   background-color: var(--bg-primary-dark);
 }
 
+.container-img {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+}
+
 .banner-img {
+  display: block;
   width: 69%;
   height: 85%;
   background-image: url('/assets/banner.jpg');
@@ -18,3 +27,15 @@
   border-radius: 25px;
 }
 
+
+@media (min-width: 1400px) {
+  .banner-container {
+    aspect-ratio: 16/5;
+    padding: 0px 80px;
+  }
+
+  .container-img {
+    width: 80%;
+    min-width: 1270px;
+  }
+}
