@@ -4,7 +4,6 @@ import { PlanosComponent } from './components/planos/planos.component';
 import { ClubeVantagensComponent } from './components/clube-vantagens/clube-vantagens.component';
 import { ContatoComponent } from './components/contato/contato.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { InfoBarComponent } from './components/info-bar/info-bar.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 
 @Component({
@@ -14,7 +13,6 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
     BannerPrincipalComponent,
     PlanosComponent,
     ClubeVantagensComponent,
-    InfoBarComponent,
     ContatoComponent,
     FooterComponent
   ],
