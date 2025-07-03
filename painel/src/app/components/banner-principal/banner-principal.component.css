@@ -39,3 +39,17 @@
     min-width: 1270px;
   }
 }
+
+@media (max-width: 784px) {
+  
+  .container-img {
+    width: 400px;
+    height: 400px;
+  }
+
+  .banner-img {
+    background-image: url('/assets/bannerMobile.jpg');
+    width: 80%;
+    height: 100%;
+  }
+}
