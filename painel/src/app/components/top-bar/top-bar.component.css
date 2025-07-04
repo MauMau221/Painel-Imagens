@@ -1,5 +1,5 @@
 .top-bar-container {
-    background-color: var(--bg-primary-dark);
+    background: var(--bg-gradient);
     color: var(--text-white);
     font-family: 'Montserrat', sans-serif;
     width: 100vw;

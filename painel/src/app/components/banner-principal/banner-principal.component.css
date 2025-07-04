@@ -6,7 +6,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16/6;
-  background-color: var(--bg-primary-dark);
+  background: var(--bg-gradient);
 }
 
 .container-img {

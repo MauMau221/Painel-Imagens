@@ -3,10 +3,11 @@
 
 /* Variáveis CSS para cores de fundo */
 :root {
+  --bg-gradient: linear-gradient(90deg, rgb(6, 7, 75) 0%, rgba(2, 49, 130, 1) 25%, rgba(2, 108, 200, 1) 50%, rgba(2, 49, 130, 1) 75%, rgb(6, 7, 75) 100%);  /* Degrade backgroud
   /* Cores principais */
-  --bg-primary-dark: #262660;        /* Cor escura principal - header, footer, seções */
-  --bg-primary-orange: #ff8300;      /* Cor laranja principal - botões, destaques */
-  --bg-orange-hover: #ffc373;        /* Hover do botão laranja */
+  /* --bg-primary-dark: #262660;         Cor escura principal - header, footer, seções */
+  --bg-primary-orange: #0acde7;      /* Cor laranja principal - botões, destaques */
+  --bg-orange-hover: #6de5f5;        /* Hover do botão laranja */
   
   /* Cores do WhatsApp */
   --bg-whatsapp-green: #25d366;      /* Cor verde do WhatsApp */
@@ -18,18 +19,19 @@
   
   /* Cores do clube de vantagens */
   --bg-cyan-primary: #0acde7;        /* Cor azul claro */
-  --bg-cyan-hover: #0097a7;          /* Hover do botão azul */
+  --bg-cyan-hover: #6de5f5;          /* Hover do botão azul */
   --bg-orange-light: #ffc373;        /* Cor laranja claro para gradiente */
 
   /* Variáveis CSS para cores de texto */
   --text-white: #ffffff;             /* Texto branco - principal em fundos escuros */
   --text-light-gray: #e0e0e0;        /* Texto cinza claro - secundário */
   --text-blue-gray: #b0bfc7;         /* Texto cinza azulado - subtítulos */
-  --text-orange: #ff8300;            /* Texto laranja - destaques e títulos */
+  --text-orange: #ffffff;            /* Texto laranja - destaques e títulos */
   --text-medium-gray: #a0a0a0;       /* Texto cinza médio - créditos */
   --text-secondary-gray: #cccccc;    /* Texto cinza claro - secundário no footer */
   --text-dark-gray: #333333;         /* Texto cinza escuro - principal em fundos claros */
   --text-description: #757575;       /* Texto cinza médio - descrições */
+
 }
 
 * , body {

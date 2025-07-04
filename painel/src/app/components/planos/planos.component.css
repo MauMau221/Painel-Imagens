@@ -1,5 +1,5 @@
 .planos-section {
-    background-color: var(--bg-primary-dark);
+    background: var(--bg-gradient);
     padding: 60px 80px;
     color: var(--text-white);
     font-family: 'Montserrat', sans-serif;
@@ -42,6 +42,23 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+.plano-card a {
+    position: relative;
+    bottom: 59px;
+    left: 44px;
+    width: 71%;
+    height: 33px;
+    border-radius: 25px;
+    display: block;
+}
+
+.plano-card a:hover {
+    border: 1px solid #ffff;
 }
 
 .credit-note {

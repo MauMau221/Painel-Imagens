@@ -1,5 +1,5 @@
 .clube-vantagens-section {
-    background: linear-gradient(90deg, var(--bg-primary-orange) 60%, var(--bg-orange-light) 100%);
+    background: var(--bg-gradient);
     color: var(--text-white);
     height: 450px;
     display: flex;
