@@ -37,7 +37,7 @@
     font-size: 1.1rem;
     box-shadow: 0 4px 18px 0 rgba(0,188,212,0.15);
     border: none;
-    transition: background 0.3s, box-shadow 0.3s, color 0.3s;
+    transition: 0.3s
 }
 
 .cta-button:hover {
@@ -47,14 +47,11 @@
 }
 
 .vantagens-image {
-    background-image: url('/assets/bannerMobile.jpg');
+    background-image: url('/assets/familia.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center right;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 55%;
+    background-position: center;
+    width: 50%;
     height: 100%;
     z-index: 1;
     opacity: 0.25;

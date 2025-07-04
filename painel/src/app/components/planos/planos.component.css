@@ -46,21 +46,6 @@
     justify-content: space-around;
     position: relative;
 }
-
-.plano-card a {
-    position: relative;
-    bottom: 59px;
-    left: 44px;
-    width: 71%;
-    height: 33px;
-    border-radius: 25px;
-    display: block;
-}
-
-.plano-card a:hover {
-    border: 1px solid #ffff;
-}
-
 .credit-note {
     margin-top: 20px;
     font-size: 11px;

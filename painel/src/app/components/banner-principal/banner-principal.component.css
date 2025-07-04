@@ -5,51 +5,58 @@
   font-family: 'Montserrat', sans-serif;
   position: relative;
   width: 100%;
-  aspect-ratio: 16/6;
   background: var(--bg-gradient);
+  padding: 60px 80px;
+  box-sizing: border-box;
 }
 
-.container-img {
+.banner-content {
+  width: 100%;
+  max-width: 1270px;
   display: flex;
   justify-content: center;
-  align-self: center;
-  width: 100%;
-  height: 100%;
+  align-items: center;
 }
 
 .banner-img {
-  display: block;
-  width: 69%;
-  height: 85%;
-  background-image: url('/assets/banner.jpg');
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
   border-radius: 25px;
+  display: block;
 }
 
-
-@media (min-width: 1400px) {
-  .banner-container {
-    aspect-ratio: 16/5;
-    padding: 0px 80px;
-  }
-
-  .container-img {
-    width: 80%;
-    min-width: 1270px;
+@media (max-width: 1400px) {
+  .banner-content {
+    max-width: 100%;
   }
 }
 
 @media (max-width: 784px) {
-  
-  .container-img {
-    width: 400px;
-    height: 400px;
+  .banner-container {
+    padding: 30px 0px;
   }
-
+  .banner-content {
+    max-width: 100vw;
+    padding: 0 8px;
+  }
   .banner-img {
-    background-image: url('/assets/bannerMobile.jpg');
-    width: 80%;
-    height: 100%;
+    width: 100%;
+    max-width: 600px;
+    min-width: 250px;
+    border-radius: 18px;
+    transition: max-width 0.3s;
+  }
+}
+
+@media (max-width: 600px) {
+  .banner-img {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 400px) {
+  .banner-img {
+    max-width: 300px;
   }
 }
