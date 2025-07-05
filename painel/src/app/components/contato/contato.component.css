@@ -4,6 +4,7 @@
     padding: 80px 80px 0;
     position: relative;
     overflow: hidden;
+    width: 100vw;
 }
 
 .contato-wrapper {

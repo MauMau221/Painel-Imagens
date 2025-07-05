@@ -4,7 +4,7 @@
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
   position: relative;
-  width: 100%;
+  width: 100vw;
   background: var(--bg-gradient);
   padding: 60px 80px;
   box-sizing: border-box;

@@ -4,6 +4,7 @@
     color: var(--text-white);
     font-family: 'Montserrat', sans-serif;
     text-align: center;
+    width: 100vw;
 }
 
 .section-title p {
