@@ -1,5 +1,5 @@
 .clube-vantagens-section {
-    height: 60vh;
+    height: 100vh;
     width: 100vw;
     position: relative;
     overflow: hidden;
@@ -10,27 +10,21 @@
 }
 
 .vantagens-image {
-    width: 100%;
-    max-width: 1000px;
+    width: 80vw;
+    max-width: 100vw;
     height: auto;
-    border-radius: 25px;
     display: block;
 }
 
-.vantagens-image img {
-    border-radius: 25px;
-}
-
 /* --- RESPONSIVIDADE --- */
-
-@media (max-width: 576px) {
-    .clube-vantagens-section {
-        height: 100vh;
+@media (max-width: 1200px) {
+    .vantagens-image {
+        width: 80vw;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
     .clube-vantagens-section {
-        height: 100vh;
+        height: 35vh;
     }
 }

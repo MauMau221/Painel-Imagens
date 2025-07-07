@@ -22,7 +22,6 @@
   width: 100%;
   max-width: 1000px;
   height: auto;
-  border-radius: 25px;
   display: block;
 }
 
@@ -44,7 +43,6 @@
     width: 100%;
     max-width: 600px;
     min-width: 250px;
-    border-radius: 18px;
     transition: max-width 0.3s;
   }
 }
