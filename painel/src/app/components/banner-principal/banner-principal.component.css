@@ -5,7 +5,7 @@
   font-family: 'Montserrat', sans-serif;
   position: relative;
   width: 100vw;
-  background: var(--bg-gradient);
+  background: var(--bg-banner);
   padding: 60px 80px;
   box-sizing: border-box;
 }

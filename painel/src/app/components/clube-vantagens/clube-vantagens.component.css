@@ -1,48 +1,36 @@
 .clube-vantagens-section {
-    height: 450px;
-    width: 100%;
+    height: 60vh;
+    width: 100vw;
     position: relative;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(0deg, rgba(0, 1, 24, 1) 60%);
 }
 
 .vantagens-image {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
+    max-width: 1000px;
+    height: auto;
+    border-radius: 25px;
+    display: block;
+}
+
+.vantagens-image img {
+    border-radius: 25px;
 }
 
 /* --- RESPONSIVIDADE --- */
 
-@media (max-width: 1200px) {
-    .clube-vantagens-section {
-        height: 400px;
-    }
-}
-
-@media (max-width: 992px) {
-    .clube-vantagens-section {
-        height: 350px;
-    }
-}
-
-@media (max-width: 768px) {
-    .clube-vantagens-section {
-        height: 300px;
-    }
-}
-
 @media (max-width: 576px) {
     .clube-vantagens-section {
-        height: 250px;
+        height: 100vh;
     }
 }
 
 @media (max-width: 480px) {
     .clube-vantagens-section {
-        height: 200px;
+        height: 100vh;
     }
 }

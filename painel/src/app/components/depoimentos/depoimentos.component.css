@@ -1,104 +1,20 @@
-.container-vantagens {
-    width: 100vw;
-    height: 60vh;
-    background: linear-gradient(0deg, rgba(0, 1, 24, 1) 70%,
-            #023182 100%);
-    display: flex;
-    position: relative;
-}
-
-.banner-img {
-    position: absolute;
-    justify-content: center;
-    align-items: center;
-    bottom: 0px;
-    left: 0px;
-    width: 50%;
-    height: 100%;
-}
-
 .depoimentos-section {
   width: 100vw;
   min-height: 60vh;
-  background: linear-gradient(0deg, rgba(0, 1, 24, 1) 60%, #023182 80%);
+  background: var(--bg-depoimentos);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 0;
 }
 
-.depoimentos-container {
-  width: 90%;
-  max-width: 1200px;
-  background: #181b23;
-  border-radius: 18px;
-  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.25);
-  padding: 40px 30px 30px 30px;
-  margin: 0 auto;
-}
-
-.depoimentos-title {
-  color: #fff;
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: bold;
-  letter-spacing: 2px;
-  margin-bottom: 8px;
-}
-
-.depoimentos-subtitle {
-  color: #b0b8c9;
-  text-align: center;
-  font-size: 1.4rem;
-  margin-bottom: 32px;
-}
-
-.depoimentos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 28px;
-}
-
-.depoimento-card {
-  background: #23263a;
-  border-radius: 12px;
-  padding: 22px 18px 18px 18px;
-  color: #f3f3f3;
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.10);
-  display: flex;
-  flex-direction: column;
-  min-height: 180px;
-}
-
-.depoimento-header {
-  margin-bottom: 10px;
-}
-
-.depoimento-nome {
-  font-weight: bold;
-  color: #fff;
-  font-size: 1.1rem;
-  display: block;
-}
-
-.depoimento-info {
-  color: #b0b8c9;
-  font-size: 0.95rem;
-  display: block;
-}
-
-.depoimento-tempo {
-  color: #ffd600;
-  font-size: 1rem;
-  display: block;
-  margin-top: 2px;
-}
-
-.depoimento-texto {
-  color: #e0e6f0;
-  font-size: 1.05rem;
-  margin-top: 8px;
-  line-height: 1.5;
+.banner-img {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  bottom: 0px;
+  left: 0px;
+  width: 50%;
+  height: 100%;
 }
 
 .depoimentos-img {
@@ -109,23 +25,11 @@
 }
 
 @media (max-width: 700px) {
-  .depoimentos-container {
-    padding: 20px 5px;
-  }
-  .depoimentos-title {
-    font-size: 1.5rem;
-  }
-  .depoimentos-subtitle {
-    font-size: 1rem;
-  }
-  .depoimentos-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
   .depoimentos-section {
     padding: 10px 0;
     min-height: 30vh;
   }
+
   .depoimentos-img {
     border-radius: 10px;
   }
