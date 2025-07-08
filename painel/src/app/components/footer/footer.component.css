@@ -4,7 +4,7 @@
     font-family: 'Montserrat', sans-serif;
     padding: 40px 60px 20px 60px;
     position: relative;
-    background: var(--bg-gradient);
+    background: var(--bg-dark-blue);
     width: 100vw;
 }
 
@@ -92,8 +92,10 @@
 }
 .footer-social-icons a {
     color: var(--text-white);
-    font-size: 22px;
     transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .footer-social-icons a:hover {
     color: #b3e0ff;

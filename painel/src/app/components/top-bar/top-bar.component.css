@@ -1,5 +1,5 @@
 .top-bar-container {
-    background: var(--bg-top-bar);
+    background: var(--bg-dark-blue);
     color: var(--text-white);
     font-family: 'Montserrat', sans-serif;
     width: 100vw;
@@ -111,5 +111,24 @@
         font-size: 11px;
         border-radius: 12px;
         min-width: unset;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-bar-container {
+        padding: 2px 8px;
+    }
+    .top-bar-content {
+        gap: 16px;
+    }
+    .top-bar-logo img {
+        max-width: 80px;
+        height: auto;
+    }
+    .client-button {
+        padding: 4px 6px;
+        font-size: 10px;
+        border-radius: 10px;
+        gap: 5px;
     }
 }

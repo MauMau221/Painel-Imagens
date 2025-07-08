@@ -52,3 +52,25 @@
     font-size: 11px;
     color: var(--text-medium-gray);
 }
+
+@media (max-width: 600px) {
+  .planos-section {
+    padding: 30px 10px;
+  }
+  .section-title p {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+  .section-title h2 {
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+    word-break: break-word;
+    line-height: 1.2;
+  }
+  .plano-card {
+    width: 90%;
+    min-width: 250px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
