@@ -23,4 +23,32 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
 })
 export class AppComponent {
   title = 'painel-imagens';
+
+  isDarkTheme = false;
+
+  constructor() {
+    // Carrega preferência do tema ao iniciar
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      this.isDarkTheme = savedTheme === 'dark';
+    } else {
+      // Detecta preferência do sistema
+      this.isDarkTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    this.updateTheme();
+  }
+
+  toggleTheme() {
+    this.isDarkTheme = !this.isDarkTheme;
+    localStorage.setItem('theme', this.isDarkTheme ? 'dark' : 'light');
+    this.updateTheme();
+  }
+
+  updateTheme() {
+    if (this.isDarkTheme) {
+      document.body.classList.add('dark-theme');
+    } else {
+      document.body.classList.remove('dark-theme');
+    }
+  }
 }

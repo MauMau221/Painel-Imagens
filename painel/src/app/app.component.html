@@ -1,3 +1,6 @@
+<button (click)="toggleTheme()" style="position: fixed; top: 16px; right: 16px; z-index: 1000; padding: 8px 16px; border-radius: 8px; border: none; background: var(--bg-primary-orange); color: var(--text-white); cursor: pointer; font-weight: bold;">
+  {{ isDarkTheme ? 'Tema Claro' : 'Tema Escuro' }}
+</button>
 <div class="home-container">
   <app-top-bar></app-top-bar>
   <div class="main-bg">

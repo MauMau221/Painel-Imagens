@@ -1,6 +1,6 @@
 .depoimentos-section {
   width: 100vw;
-  background: var(--bg-depoimentos);
+  background: linear-gradient(180deg, #026cc8 0%, #026cc8 20%, #000018 20%, #000018 100%);
   display: flex;
   justify-content: center;
   align-items: center;

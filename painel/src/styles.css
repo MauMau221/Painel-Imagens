@@ -1,62 +1,93 @@
 /* You can add global styles to this file, and also import other style files */
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 
-/* Variáveis CSS para cores de fundo */
+/* Novas variáveis globais */
 :root {
+  --color-dark-blue: #000018;
+  --color-blue: #026cc8;
+  --color-orange: #0acde7;
+  --color-white: #ffffff;
+  --color-light-gray: #f4f4f4;
+  --color-cyan: #0acde7;
+  --color-cyan-hover: #6de5f5;
+  --color-orange-light: #ffc373;
+  --color-whatsapp-green: #25d366;
+  --color-whatsapp-hover: #20b859;
 
-  /* Cores principais */
-  /* --bg-primary-dark: #262660;         Cor escura principal - header, footer, seções */
-  --bg-primary-orange: #0acde7;
-  /* Cor laranja principal - botões, destaques */
-  --bg-orange-hover: #6de5f5;
-  /* Hover do botão laranja */
+  /* Gradientes globais */
+  --gradient-banner: linear-gradient(0deg, var(--color-dark-blue) 0%, var(--color-dark-blue) 100%);
+  --gradient-depoimentos: linear-gradient(180deg, var(--color-blue) 0%, var(--color-blue) 20%, var(--color-dark-blue) 20%, var(--color-dark-blue) 100%);
+  --gradient-top-bar: linear-gradient(0deg, var(--color-dark-blue) 0%, var(--color-dark-blue) 100%);
+  --gradient-footer: linear-gradient(0deg, var(--color-dark-blue) 0%, var(--color-dark-blue) 100%);
+  --gradient-planos: linear-gradient(0deg, var(--color-blue) 0%, var(--color-dark-blue) 100%);
 
-  /* Cores do WhatsApp */
-  --bg-whatsapp-green: #25d366;
-  /* Cor verde do WhatsApp */
-  --bg-whatsapp-hover: #20b859;
-  /* Hover do botão WhatsApp */
-
-  /* Cores neutras */
-  --bg-white: #ffffff;
-  /* Cor branca */
-  --bg-light-gray: #f4f4f4;
-  /* Cor cinza claro */
-
-  /* Cores do clube de vantagens */
-  --bg-cyan-primary: #0acde7;
-  /* Cor azul claro */
-  --bg-cyan-hover: #6de5f5;
-  /* Hover do botão azul */
-  --bg-orange-light: #ffc373;
-  /* Cor laranja claro para gradiente */
+  /* Variáveis antigas apontando para as novas */
+  --bg-primary-orange: var(--color-orange);
+  --bg-orange-hover: var(--color-cyan-hover);
+  --bg-whatsapp-green: var(--color-whatsapp-green);
+  --bg-whatsapp-hover: var(--color-whatsapp-hover);
+  --bg-white: var(--color-white);
+  --bg-light-gray: var(--color-light-gray);
+  --bg-cyan-primary: var(--color-cyan);
+  --bg-cyan-hover: var(--color-cyan-hover);
+  --bg-orange-light: var(--color-orange-light);
+  --bg-dark-blue: var(--gradient-top-bar);
+  --bg-banner: var(--gradient-banner);
+  --bg-planos: var(--gradient-planos);
+  --bg-depoimentos: var(--gradient-depoimentos);
 
   /* Variáveis CSS para cores de texto */
   --text-white: #ffffff;
-  /* Texto branco - principal em fundos escuros */
   --text-light-gray: #e0e0e0;
-  /* Texto cinza claro - secundário */
-  --text-blue-gray: #b0bfc7;
-  /* Texto cinza azulado - subtítulos */
+  --text-blue-gray: #757575;
   --text-orange: #ffffff;
-  /* Texto laranja - destaques e títulos */
   --text-medium-gray: #a0a0a0;
-  /* Texto cinza médio - créditos */
   --text-secondary-gray: #cccccc;
-  /* Texto cinza claro - secundário no footer */
   --text-dark-gray: #333333;
-  /* Texto cinza escuro - principal em fundos claros */
   --text-description: #757575;
-  /* Texto cinza médio - descrições */
+}
 
-  --bg-dark-blue: linear-gradient(0deg, rgba(0, 1, 24, 1) 100%);
-  --bg-banner: linear-gradient(0deg, rgba(0, 1, 24, 1) 10%);
-  --bg-planos: linear-gradient(0deg, #026cc8, rgba(0, 1, 24, 1) 100%);
-  --bg-depoimentos: linear-gradient(180deg,
-      #026cc8 0%,
-      #026cc8 20%,
-      rgba(0, 1, 24, 1) 20%,
-      rgba(0, 1, 24, 1) 100%);
+.dark-theme {
+  --color-dark-blue: #181818;
+  --color-blue: #23234a;
+  --color-orange: #026cc8;
+  --color-white: #181818;
+  --color-light-gray: #23234a;
+  --color-cyan: #0acde7;
+  --color-cyan-hover: #6de5f5;
+  --color-orange-light: #23234a;
+  --color-whatsapp-green: #128c7e;
+  --color-whatsapp-hover: #075e54;
+
+  --gradient-banner: linear-gradient(0deg, var(--color-dark-blue) 0%, var(--color-dark-blue) 100%);
+  --gradient-depoimentos: linear-gradient(180deg, var(--color-blue) 0%, var(--color-blue) 20%, var(--color-dark-blue) 20%, var(--color-dark-blue) 100%);
+  --gradient-top-bar: linear-gradient(0deg, var(--color-dark-blue) 0%, var(--color-dark-blue) 100%);
+  --gradient-footer: linear-gradient(0deg, var(--color-dark-blue) 0%, var(--color-dark-blue) 100%);
+  --gradient-planos: linear-gradient(0deg, var(--color-blue) 0%, var(--color-dark-blue) 100%);
+
+  /* Variáveis antigas apontando para as novas */
+  --bg-primary-orange: var(--color-orange);
+  --bg-orange-hover: var(--color-cyan-hover);
+  --bg-whatsapp-green: var(--color-whatsapp-green);
+  --bg-whatsapp-hover: var(--color-whatsapp-hover);
+  --bg-white: var(--color-white);
+  --bg-light-gray: var(--color-light-gray);
+  --bg-cyan-primary: var(--color-cyan);
+  --bg-cyan-hover: var(--color-cyan-hover);
+  --bg-orange-light: var(--color-orange-light);
+  --bg-dark-blue: var(--gradient-top-bar);
+  --bg-banner: var(--gradient-banner);
+  --bg-planos: var(--gradient-planos);
+  --bg-depoimentos: var(--gradient-depoimentos);
+
+  --text-white: #ffffff;
+  --text-light-gray: #b0bfc7;
+  --text-blue-gray: #6c7a89;
+  --text-orange: #ff8300;
+  --text-medium-gray: #757575;
+  --text-secondary-gray: #444444;
+  --text-dark-gray: #e0e0e0;
+  --text-description: #b0bfc7;
 }
 
 *,
