@@ -1,6 +1,6 @@
 .planos-section {
     background: var(--bg-planos);
-    padding: 60px 80px;
+    padding: 80px 80px;
     color: var(--text-white);
     font-family: 'Montserrat', sans-serif;
     text-align: center;
@@ -30,6 +30,7 @@
     justify-content: center;
     align-items: flex-start;
     gap: 25px;
+    padding-top: 40px;
     margin-bottom: 20px;
 }
 
@@ -48,9 +49,9 @@
     position: relative;
 }
 .credit-note {
-    margin-top: 20px;
+    margin-top: 80px;
     font-size: 11px;
-    color: var(--text-medium-gray);
+    color: white;
 }
 
 @media (max-width: 600px) {
