@@ -1,0 +1,116 @@
+.contratos-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  background: var(--bg-light-gray);
+}
+.contratos-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  padding: 40px 32px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+.contratos-card h2 {
+  font-size: 2rem;
+  color: var(--bg-primary-orange);
+  margin-bottom: 28px;
+  font-weight: 800;
+}
+.contratos-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.contratos-card li {
+  margin-bottom: 18px;
+}
+.contratos-card a {
+  color: var(--text-dark-gray);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+.contratos-card a:hover {
+  color: var(--bg-orange-hover);
+}
+.contratos-card .icon {
+  font-size: 1.3em;
+  vertical-align: middle;
+}
+.contratos-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 12px 48px 12px;
+  background: var(--bg-light-gray);
+}
+.contratos-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 0.2em;
+  color: var(--text-dark-gray);
+}
+.contratos-subtitle {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 2.5em;
+  color: var(--text-description);
+}
+.contratos-group {
+  margin-bottom: 2.2em;
+}
+.contratos-box {
+  background: var(--bg-white);
+  border-radius: 8px;
+  border: 1px solid var(--bg-light-gray);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  padding: 18px 20px;
+  margin-bottom: 0.5em;
+}
+.contratos-link {
+  color: var(--text-dark-gray);
+  font-size: 1.08rem;
+  text-decoration: none;
+  transition: color 0.2s;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+.contratos-link:hover {
+  color: var(--bg-primary-orange);
+  text-decoration: underline;
+}
+@media (max-width: 600px) {
+  .contratos-card {
+    padding: 22px 6vw;
+    max-width: 98vw;
+  }
+  .contratos-card h2 {
+    font-size: 1.2rem;
+  }
+  .contratos-card a {
+    font-size: 1rem;
+  }
+  .contratos-content {
+    padding: 18px 2vw 32px 2vw;
+  }
+  .contratos-title {
+    font-size: 2rem;
+  }
+  .contratos-subtitle {
+    font-size: 1.1rem;
+  }
+  .contratos-box {
+    padding: 12px 6px;
+  }
+  .contratos-link {
+    font-size: 0.98rem;
+  }
+} 

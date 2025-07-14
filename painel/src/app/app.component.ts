@@ -6,6 +6,10 @@ import { DepoimentosComponent } from './components/depoimentos/depoimentos.compo
 import { ContatoComponent } from './components/contato/contato.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
+import { RouterOutlet } from '@angular/router';
+import { Router } from '@angular/router';
+import { inject } from '@angular/core';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +20,9 @@ import { TopBarComponent } from './components/top-bar/top-bar.component';
     ClubeVantagensComponent,
     DepoimentosComponent,
     ContatoComponent,
-    FooterComponent
+    FooterComponent,
+    RouterOutlet,
+    NgIf
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -25,6 +31,11 @@ export class AppComponent {
   title = 'painel-imagens';
 
   isDarkTheme = false;
+  router = inject(Router);
+
+  isHomeRoute() {
+    return this.router.url === '/' || this.router.url === '';
+  }
 
   constructor() {
     // Carrega preferência do tema ao iniciar

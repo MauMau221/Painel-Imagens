@@ -1,36 +1,33 @@
-<button (click)="toggleTheme()" style="position: fixed; top: 16px; right: 16px; z-index: 1000; padding: 8px 16px; border-radius: 8px; border: none; background: var(--bg-primary-orange); color: var(--text-white); cursor: pointer; font-weight: bold;">
+<button (click)="toggleTheme()" style="position: fixed; top: 16px; left: 146px; z-index: 1000; padding: 8px 16px; border-radius: 8px; border: none; background: var(--bg-primary-orange); color: var(--text-white); cursor: pointer; font-weight: bold;">
   {{ isDarkTheme ? 'Tema Claro' : 'Tema Escuro' }}
 </button>
 <div class="home-container">
   <app-top-bar></app-top-bar>
-  <div class="main-bg">
-    <div class="container">
-      <app-banner-principal></app-banner-principal>
+  <ng-container *ngIf="isHomeRoute()">
+    <div class="main-bg">
+      <div class="container">
+        <app-banner-principal></app-banner-principal>
+      </div>
     </div>
-  </div>
-  <div class="bg-blue">
-    <div class="container">
-      <app-planos></app-planos>
+    <div class="bg-blue">
+      <div class="container">
+        <app-planos></app-planos>
+      </div>
     </div>
-  </div>
-  <div class="bg-orange">
-    <div class="container">
-      <app-depoimentos></app-depoimentos>
+    <div class="bg-orange">
+      <div class="container">
+        <app-depoimentos></app-depoimentos>
+      </div>
     </div>
-  </div>
-  <div class="bg-orange">
-    <div class="container">
-      <app-clube-vantagens></app-clube-vantagens>
+    <div class="bg-orange">
+      <div class="container">
+        <app-clube-vantagens></app-clube-vantagens>
+      </div>
     </div>
-  </div>
-  <div class="bg-blue">
-  </div>
-  <div class="bg-blue-light">
     <div class="container">
+      <app-contato></app-contato>
     </div>
-  </div>
-  <div class="container">
-    <app-contato></app-contato>
-  </div>
+  </ng-container>
+  <router-outlet></router-outlet>
   <app-footer></app-footer>
 </div>
