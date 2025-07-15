@@ -4,7 +4,8 @@
     font-family: 'Montserrat', sans-serif;
     padding: 40px 60px 20px 60px;
     position: relative;
-    width: 100vw;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .footer-container {

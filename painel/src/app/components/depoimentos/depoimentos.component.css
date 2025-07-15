@@ -1,17 +1,17 @@
 .depoimentos-section {
-  width: 100vw;
+  width: 100%;
   background: linear-gradient( #000018 100%);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 10px ;
 }
 
 .depoimentos-img {
-  max-width: 550px;
+  max-width: 1000px;
   width: 80vw;
   height: auto;
   display: block;
+  padding-top: 10px;
 }
 
 .image-container {
@@ -21,7 +21,7 @@
 
 @media (min-width: 1400px) {
   .depoimentos-img {
-    max-width: 400px;
+    max-width: 550px;
     width: 100%;
   }
 }

@@ -1,6 +1,6 @@
 .clube-vantagens-section {
-    height: 60vh;
-    width: 100vw;
+    height: 45vh;
+    width: 100%;
     position: relative;
     z-index: 0;
     overflow: hidden;
@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: center;
     background: linear-gradient(0deg, #000018 0%, #000018 100%);
+    overflow-x: hidden;
 }
 
 .vantagens-image {
@@ -25,7 +26,6 @@
 /* --- RESPONSIVIDADE --- */
 @media (min-width: 1400px) {
     .vantagens-image {
-        max-width: 1000px;
         width: 100%;
     }
 }

@@ -7,7 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { ImageManagementService, ImageInfo } from '../../services/image-management.service';
+import { PainelApiService } from '../../services/painel-api.service';
 
 @Component({
   selector: 'app-admin-images',
@@ -26,57 +26,38 @@ import { ImageManagementService, ImageInfo } from '../../services/image-manageme
   styleUrl: './admin-images.component.css'
 })
 export class AdminImagesComponent implements OnInit {
-  images: ImageInfo[] = [];
-  selectedImage: ImageInfo | null = null;
   selectedFile: File | null = null;
+  imageUrl: string | null = null;
   isUploading = false;
 
   constructor(
-    private imageService: ImageManagementService,
+    private painelApi: PainelApiService,
     private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
-    this.loadImages();
-  }
-
-  loadImages(): void {
-    this.imageService.getAllImages().subscribe(images => {
-      this.images = images;
+    this.painelApi.getConfig().subscribe(config => {
+      this.imageUrl = config.image || null;
     });
   }
 
-  onFileSelected(event: any, image: ImageInfo): void {
-    const file = event.target.files[0];
-    if (file) {
-      this.selectedImage = image;
-      this.selectedFile = file;
-    }
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0];
   }
 
   uploadImage(): void {
-    if (!this.selectedImage || !this.selectedFile) {
+    if (!this.selectedFile) {
       this.showMessage('Por favor, selecione uma imagem', 'error');
       return;
     }
-
     this.isUploading = true;
-
-    // Primeiro atualiza localmente
-    this.imageService.updateImage(this.selectedImage.id, this.selectedFile).subscribe(success => {
-      if (success) {
-        // Simula o upload para o servidor
-        this.imageService.uploadImageToServer(this.selectedFile!, this.selectedImage!.id).subscribe(response => {
-          this.isUploading = false;
-          this.selectedFile = null;
-          this.selectedImage = null;
-          this.showMessage('Imagem atualizada com sucesso!', 'success');
-          this.loadImages(); // Recarrega as imagens
-        });
-      } else {
-        this.isUploading = false;
-        this.showMessage('Erro ao atualizar a imagem', 'error');
-      }
+    this.painelApi.uploadImage(this.selectedFile).subscribe(res => {
+      this.isUploading = false;
+      this.imageUrl = res.image;
+      this.showMessage('Imagem atualizada com sucesso!', 'success');
+    }, () => {
+      this.isUploading = false;
+      this.showMessage('Erro ao enviar imagem', 'error');
     });
   }
 
@@ -87,14 +68,5 @@ export class AdminImagesComponent implements OnInit {
       verticalPosition: 'top',
       panelClass: type === 'success' ? ['success-snackbar'] : ['error-snackbar']
     });
-  }
-
-  getFileSize(file: File): string {
-    const sizeInMB = file.size / (1024 * 1024);
-    return sizeInMB.toFixed(2) + ' MB';
-  }
-
-  isImageFile(file: File): boolean {
-    return file.type.startsWith('image/');
   }
 } 

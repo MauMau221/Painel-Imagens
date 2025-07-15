@@ -45,6 +45,11 @@
   --text-secondary-gray: #cccccc;
   --text-dark-gray: #333333;
   --text-description: #757575;
+
+  --main-bg-color: #ffffff;
+  --main-text-color: #000000;
+  --main-link-color: #1976d2;
+  --main-button-color: #388e3c;
 }
 
 .dark-theme {
@@ -103,8 +108,23 @@ body {
   height: 100%;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
+  background: var(--main-bg-color);
+  color: var(--main-text-color);
+}
+
+a {
+  color: var(--main-link-color);
+}
+
+button, .mat-raised-button, .mat-flat-button {
+  background-color: var(--main-button-color) !important;
+  color: #fff !important;
 }

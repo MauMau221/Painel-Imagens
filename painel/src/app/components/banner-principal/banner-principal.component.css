@@ -4,10 +4,11 @@
   justify-content: center;
   font-family: 'Montserrat', sans-serif;
   position: relative;
-  width: 100vw;
+  width: 100%;
   background: linear-gradient(0deg, #000018 0%, #000018 100%);
   padding: 60px 80px;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .banner-content {
