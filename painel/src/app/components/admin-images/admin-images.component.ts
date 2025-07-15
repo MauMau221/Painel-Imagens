@@ -9,6 +9,21 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { PainelApiService } from '../../services/painel-api.service';
 
+interface AdminImage {
+  key: string;
+  label: string;
+  url: string;
+  file: File | null;
+  isUploading: boolean;
+}
+
+const IMAGES: { key: string; label: string }[] = [
+  { key: 'banner', label: 'Banner Principal' },
+  { key: 'bannerMobile', label: 'Banner Mobile' },
+  { key: 'depoimentos', label: 'Imagem Depoimentos' },
+  { key: 'vantagens', label: 'Imagem Vantagens' }
+];
+
 @Component({
   selector: 'app-admin-images',
   standalone: true,
@@ -26,9 +41,8 @@ import { PainelApiService } from '../../services/painel-api.service';
   styleUrl: './admin-images.component.css'
 })
 export class AdminImagesComponent implements OnInit {
-  selectedFile: File | null = null;
-  imageUrl: string | null = null;
-  isUploading = false;
+  images: AdminImage[] = [];
+  backendUrl = 'http://localhost:3000';
 
   constructor(
     private painelApi: PainelApiService,
@@ -37,26 +51,45 @@ export class AdminImagesComponent implements OnInit {
 
   ngOnInit(): void {
     this.painelApi.getConfig().subscribe(config => {
-      this.imageUrl = config.image || null;
+      this.images = IMAGES.map(img => ({
+        key: img.key,
+        label: img.label,
+        url: config[img.key] ? this.backendUrl + config[img.key] : '',
+        file: null,
+        isUploading: false
+      }));
     });
   }
 
-  onFileSelected(event: any): void {
-    this.selectedFile = event.target.files[0];
+  onFileSelected(event: any, img: AdminImage): void {
+    const file = event.target.files[0];
+    img.file = file;
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        img.url = e.target.result; // Mostra preview imediatamente
+      };
+      reader.readAsDataURL(file);
+    }
   }
 
-  uploadImage(): void {
-    if (!this.selectedFile) {
+  uploadImage(img: AdminImage): void {
+    if (!img.file) {
       this.showMessage('Por favor, selecione uma imagem', 'error');
       return;
     }
-    this.isUploading = true;
-    this.painelApi.uploadImage(this.selectedFile).subscribe(res => {
-      this.isUploading = false;
-      this.imageUrl = res.image;
-      this.showMessage('Imagem atualizada com sucesso!', 'success');
+    img.isUploading = true;
+    this.painelApi.uploadImage(img.file).subscribe(res => {
+      // Atualiza config com a nova imagem
+      const update = { [img.key]: res.image };
+      this.painelApi.updateConfig(update).subscribe(() => {
+        img.url = this.backendUrl + res.image;
+        img.file = null;
+        img.isUploading = false;
+        this.showMessage('Imagem atualizada com sucesso!', 'success');
+      });
     }, () => {
-      this.isUploading = false;
+      img.isUploading = false;
       this.showMessage('Erro ao enviar imagem', 'error');
     });
   }

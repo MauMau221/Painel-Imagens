@@ -1,9 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { PainelApiService } from '../../services/painel-api.service';
 
 @Component({
   selector: 'app-depoimentos',
-  imports: [],
+  imports: [MatIconModule],
   templateUrl: './depoimentos.component.html',
   styleUrl: './depoimentos.component.css'
 })
-export class DepoimentosComponent {}
+export class DepoimentosComponent implements OnInit {
+  depoimentosUrl: string = '';
+  backendUrl = 'http://localhost:3000';
+
+  constructor(private painelApi: PainelApiService) {}
+
+  ngOnInit() {
+    this.painelApi.getConfig().subscribe(config => {
+      this.depoimentosUrl = config.depoimentos ? this.backendUrl + config.depoimentos : '/assets/teste.png';
+    });
+  }
+}

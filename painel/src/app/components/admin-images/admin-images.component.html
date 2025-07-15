@@ -1,25 +1,25 @@
 <div class="admin-container">
   <div class="admin-header">
     <h1>Painel de Administração de Imagens</h1>
-    <p>Gerencie a imagem principal do site</p>
+    <p>Gerencie as imagens principais do site</p>
   </div>
 
   <div class="images-grid">
-    <mat-card class="image-card">
+    <mat-card *ngFor="let img of images; let i = index" class="image-card">
       <mat-card-header>
-        <mat-card-title>Imagem Principal</mat-card-title>
-        <mat-card-subtitle>Banner ou destaque do site</mat-card-subtitle>
+        <mat-card-title>{{ img.label }}</mat-card-title>
+        <mat-card-subtitle>Atualize a {{ img.label.toLowerCase() }}</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <div class="image-preview">
-          <img *ngIf="imageUrl" [src]="imageUrl" alt="Imagem principal" class="preview-img">
+          <img *ngIf="img.url" [src]="img.url" [alt]="img.label" class="preview-img">
         </div>
         <div class="upload-section">
           <input
             type="file"
-            id="file-input"
+            [id]="'file-' + img.key"
             accept="image/*"
-            (change)="onFileSelected($event)"
+            (change)="onFileSelected($event, img)"
             style="display: none;"
             #fileInput
           >
@@ -28,9 +28,9 @@
               <mat-icon>upload</mat-icon>
               Selecionar Nova Imagem
             </button>
-            <button mat-raised-button color="accent" (click)="uploadImage()" [disabled]="!selectedFile || isUploading" class="upload-btn">
+            <button mat-raised-button color="accent" (click)="uploadImage(img)" [disabled]="!img.file || img.isUploading" class="upload-btn">
               <mat-icon>cloud_upload</mat-icon>
-              {{ isUploading ? 'Enviando...' : 'Enviar' }}
+              {{ img.isUploading ? 'Enviando...' : 'Enviar' }}
             </button>
           </div>
         </div>
