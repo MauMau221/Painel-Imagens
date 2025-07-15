@@ -17,6 +17,11 @@
     display: block;
 }
 
+.image-container {
+    position: relative;
+    display: block;
+}
+
 /* --- RESPONSIVIDADE --- */
 @media (min-width: 1400px) {
     .vantagens-image {

@@ -48,6 +48,11 @@
     justify-content: space-around;
     position: relative;
 }
+
+.image-container {
+    position: relative;
+    display: block;
+}
 .credit-note {
     margin-top: 80px;
     font-size: 11px;

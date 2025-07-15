@@ -7,6 +7,4 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './planos.component.html',
   styleUrl: './planos.component.css'
 })
-export class PlanosComponent {
-
-}
+export class PlanosComponent {}

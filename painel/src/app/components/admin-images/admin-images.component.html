@@ -1,0 +1,77 @@
+<div class="admin-container">
+  <div class="admin-header">
+    <h1>Painel de Administração de Imagens</h1>
+    <p>Gerencie todas as imagens do site</p>
+  </div>
+
+  <div class="images-grid">
+    <mat-card *ngFor="let image of images" class="image-card">
+      <mat-card-header>
+        <mat-card-title>{{ image.component }}</mat-card-title>
+        <mat-card-subtitle>{{ image.description }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <div class="image-preview">
+          <img [src]="image.currentSrc" [alt]="image.alt" class="preview-img">
+        </div>
+
+        <div class="image-info">
+          <p><strong>ID:</strong> {{ image.id }}</p>
+          <p><strong>Caminho:</strong> {{ image.path }}</p>
+          <p><strong>Alt:</strong> {{ image.alt }}</p>
+        </div>
+
+        <div class="upload-section">
+          <input
+            type="file"
+            [id]="'file-' + image.id"
+            accept="image/*"
+            (change)="onFileSelected($event, image)"
+            style="display: none;"
+            #fileInput
+          >
+          
+          <div class="upload-controls">
+            <button 
+              mat-raised-button 
+              color="primary" 
+              (click)="fileInput.click()"
+              class="select-btn"
+            >
+              <mat-icon>upload</mat-icon>
+              Selecionar Nova Imagem
+            </button>
+
+            <button 
+              mat-raised-button 
+              color="accent" 
+              (click)="uploadImage()"
+              [disabled]="!selectedFile || selectedImage?.id !== image.id || isUploading"
+              class="upload-btn"
+            >
+              <mat-icon>cloud_upload</mat-icon>
+              {{ isUploading ? 'Enviando...' : 'Enviar' }}
+            </button>
+          </div>
+
+          <div *ngIf="selectedFile && selectedImage?.id === image.id" class="file-info">
+            <p><strong>Arquivo selecionado:</strong> {{ selectedFile.name }}</p>
+            <p><strong>Tamanho:</strong> {{ getFileSize(selectedFile) }}</p>
+            <p><strong>Tipo:</strong> {{ selectedFile.type }}</p>
+            
+            <div *ngIf="!isImageFile(selectedFile)" class="error-message">
+              <mat-icon>error</mat-icon>
+              <span>Por favor, selecione um arquivo de imagem válido</span>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div *ngIf="images.length === 0" class="no-images">
+    <mat-icon>image_not_supported</mat-icon>
+    <p>Nenhuma imagem encontrada</p>
+  </div>
+</div> 

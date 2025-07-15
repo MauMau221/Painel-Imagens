@@ -7,6 +7,4 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './banner-principal.component.html',
   styleUrl: './banner-principal.component.css'
 })
-export class BannerPrincipalComponent {
-
-}
+export class BannerPrincipalComponent {}

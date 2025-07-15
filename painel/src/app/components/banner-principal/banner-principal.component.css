@@ -23,6 +23,11 @@
   display: block;
 }
 
+.image-container {
+  position: relative;
+  display: block;
+}
+
 @media (min-width: 1400px) {
   .banner-img {
     max-width: 1000px;

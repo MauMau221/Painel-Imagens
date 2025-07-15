@@ -7,6 +7,4 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './contato.component.html',
   styleUrl: './contato.component.css'
 })
-export class ContatoComponent {
-
-}
+export class ContatoComponent {}
