@@ -1,0 +1,20 @@
+{
+  "themeLight": {
+    "--color-dark-blue": "#000018",
+    "--color-blue": "#a00e5c",
+    "--color-orange": "#0acde7",
+    "--color-white": "#ffffff",
+    "--color-light-gray": "#f4f4f4",
+    "--color-cyan": "#0acde7",
+    "--color-cyan-hover": "#6de5f5",
+    "--color-orange-light": "#ffc373",
+    "--color-whatsapp-green": "#25d366",
+    "--color-whatsapp-hover": "#20b859",
+    "--main-bg-color": "#ffffff",
+    "--main-text-color": "#000000",
+    "--main-link-color": "#1976d2",
+    "--main-button-color": "#388e3c"
+  },
+  "image": "/uploads/1752613988216-",
+  "banner": "/uploads/1752613988216-"
+}
