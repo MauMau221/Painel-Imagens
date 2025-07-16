@@ -9,7 +9,6 @@
   text-align: center;
   margin-bottom: 40px;
   padding: 20px;
-  background: linear-gradient(135deg, var(--color-dark-blue) 0%, var(--color-blue) 100%);
   color: white;
   border-radius: 10px;
 }
@@ -46,7 +45,6 @@
 }
 
 .image-card mat-card-header {
-  background: linear-gradient(135deg, var(--color-blue) 0%, var(--color-cyan) 100%);
   color: white;
   padding: 20px;
 }

@@ -1,7 +1,7 @@
 <section class="depoimentos-section">
   <a href="">
-    <div class="image-container">
-      <img [src]="depoimentosUrl" alt="Depoimentos" class="depoimentos-img"/>
-    </div>
+    <picture class="image-container">
+      <img [src]="isMobile() && depoimentosMobileUrl ? depoimentosMobileUrl : depoimentosUrl" alt="Depoimentos" class="depoimentos-img" />
+    </picture>
   </a>
 </section>

@@ -10,6 +10,7 @@ import { PainelApiService } from '../../services/painel-api.service';
 })
 export class ClubeVantagensComponent implements OnInit {
   vantagensUrl: string = '';
+  vantagensMobileUrl: string = '';
   backendUrl = 'http://localhost:3000';
 
   constructor(private painelApi: PainelApiService) {}
@@ -17,6 +18,11 @@ export class ClubeVantagensComponent implements OnInit {
   ngOnInit() {
     this.painelApi.getConfig().subscribe(config => {
       this.vantagensUrl = config.vantagens ? this.backendUrl + config.vantagens : '/assets/vantagens.png';
+      this.vantagensMobileUrl = config.vantagensMobile ? this.backendUrl + config.vantagensMobile : '/assets/vantagens.png';
     });
+  }
+
+  isMobile(): boolean {
+    return window.innerWidth <= 794;
   }
 }

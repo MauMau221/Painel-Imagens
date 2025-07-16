@@ -1,5 +1,5 @@
 <section class="clube-vantagens-section">
   <picture class="image-container">
-    <img [src]="vantagensUrl" alt="Vantagens do Clube" class="vantagens-image" />
+    <img [src]="isMobile() && vantagensMobileUrl ? vantagensMobileUrl : vantagensUrl" alt="Vantagens do Clube" class="vantagens-image" />
   </picture>
 </section>

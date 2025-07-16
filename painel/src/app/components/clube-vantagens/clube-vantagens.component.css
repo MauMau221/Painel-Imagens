@@ -1,5 +1,5 @@
 .clube-vantagens-section {
-    height: 45vh;
+    height: 40vh;
     width: 100%;
     position: relative;
     z-index: 0;
@@ -7,12 +7,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(0deg, #000018 0%, #000018 100%);
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    width: 100%;
+    /* background removido */
+    padding: 60px 80px;
+    box-sizing: border-box;
     overflow-x: hidden;
 }
 
 .vantagens-image {
-    width: 80vw;
+    width: 100%;
     max-width: 1200px;
     height: auto;
     display: block;
@@ -32,13 +37,13 @@
 
 @media (max-width: 1200px) {
     .vantagens-image {
-        width: 80vw;
+        width: 80%;
     }
 }
 
 @media (max-width: 794px) {
     .clube-vantagens-section {
-        padding: 10px 0px;
+        padding: 0px;
         height: auto;
         min-height: 50vh;
     }

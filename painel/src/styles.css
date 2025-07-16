@@ -1,8 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
-@import '@angular/material/prebuilt-themes/indigo-pink.css';
-
-/* Novas variáveis globais */
+/* =========================
+   VARIÁVEIS GLOBAIS (TEMA CLARO)
+   ========================= */
 :root {
+  /* Cores principais */
   --color-dark-blue: #000018;
   --color-blue: #026cc8;
   --color-orange: #0acde7;
@@ -14,14 +14,14 @@
   --color-whatsapp-green: #25d366;
   --color-whatsapp-hover: #20b859;
 
-  /* Gradientes globais */
+  /* Gradientes */
   --gradient-banner: linear-gradient(0deg, var(--color-dark-blue) 0%, var(--color-dark-blue) 100%);
-  --gradient-depoimentos: linear-gradient(180deg, var(--color-blue) 0%, var(--color-blue) 20%, var(--color-dark-blue) 20%, var(--color-dark-blue) 100%);
+  --gradient-depoimentos: linear-gradient( var(--color-dark-blue) 100%);
   --gradient-top-bar: linear-gradient(0deg, var(--color-dark-blue) 0%, var(--color-dark-blue) 100%);
   --gradient-footer: linear-gradient(0deg, var(--color-dark-blue) 0%, var(--color-dark-blue) 100%);
   --gradient-planos: linear-gradient(0deg, var(--color-blue) 0%, var(--color-dark-blue) 100%);
 
-  /* Variáveis antigas apontando para as novas */
+  /* Backgrounds utilitários */
   --bg-primary-orange: var(--color-orange);
   --bg-orange-hover: var(--color-cyan-hover);
   --bg-whatsapp-green: var(--color-whatsapp-green);
@@ -36,7 +36,7 @@
   --bg-planos: var(--gradient-planos);
   --bg-depoimentos: var(--gradient-depoimentos);
 
-  /* Variáveis CSS para cores de texto */
+  /* Cores de texto */
   --text-white: #ffffff;
   --text-light-gray: #e0e0e0;
   --text-blue-gray: #757575;
@@ -46,12 +46,16 @@
   --text-dark-gray: #333333;
   --text-description: #757575;
 
+  /* Cores principais de layout */
   --main-bg-color: #ffffff;
   --main-text-color: #000000;
   --main-link-color: #1976d2;
   --main-button-color: #388e3c;
 }
 
+/* =========================
+   VARIÁVEIS GLOBAIS (TEMA ESCURO)
+   ========================= */
 .dark-theme {
   --color-dark-blue: #181818;
   --color-blue: #23234a;
@@ -70,7 +74,6 @@
   --gradient-footer: linear-gradient(0deg, var(--color-dark-blue) 0%, var(--color-dark-blue) 100%);
   --gradient-planos: linear-gradient(0deg, var(--color-blue) 0%, var(--color-dark-blue) 100%);
 
-  /* Variáveis antigas apontando para as novas */
   --bg-primary-orange: var(--color-orange);
   --bg-orange-hover: var(--color-cyan-hover);
   --bg-whatsapp-green: var(--color-whatsapp-green);
@@ -95,16 +98,18 @@
   --text-description: #b0bfc7;
 }
 
+/* =========================
+   RESET E ESTILOS BÁSICOS
+   ========================= */
 *,
 body {
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
+  margin: 0;
+  padding: 0;
+  border: 0;
   box-sizing: border-box;
 }
 
-html,
-body {
+html, body {
   height: 100%;
 }
 
@@ -113,7 +118,6 @@ html {
 }
 
 body {
-  margin: 0;
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
   background: var(--main-bg-color);
@@ -127,4 +131,20 @@ a {
 button, .mat-raised-button, .mat-flat-button {
   background-color: var(--main-button-color) !important;
   color: #fff !important;
+}
+
+/* =========================
+   CLASSES DE BACKGROUND UTILITÁRIAS
+   ========================= */
+.main-bg {
+  background: var(--bg-banner);
+}
+.bg-blue {
+  background: var(--bg-planos);
+}
+.bg-orange {
+  background: var(--bg-depoimentos);
+}
+.bg-dark {
+  background: var(--bg-dark-blue);
 }

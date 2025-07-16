@@ -10,6 +10,7 @@ import { PainelApiService } from '../../services/painel-api.service';
 })
 export class DepoimentosComponent implements OnInit {
   depoimentosUrl: string = '';
+  depoimentosMobileUrl: string = '';
   backendUrl = 'http://localhost:3000';
 
   constructor(private painelApi: PainelApiService) {}
@@ -17,6 +18,11 @@ export class DepoimentosComponent implements OnInit {
   ngOnInit() {
     this.painelApi.getConfig().subscribe(config => {
       this.depoimentosUrl = config.depoimentos ? this.backendUrl + config.depoimentos : '/assets/teste.png';
+      this.depoimentosMobileUrl = config.depoimentosMobile ? this.backendUrl + config.depoimentosMobile : '/assets/teste.png';
     });
+  }
+
+  isMobile(): boolean {
+    return window.innerWidth <= 794;
   }
 }

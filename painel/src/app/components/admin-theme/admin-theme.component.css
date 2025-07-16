@@ -1,11 +1,42 @@
+/* Container centralizado e visual agradável */
 .admin-theme-container {
   display: flex;
   justify-content: center;
-  margin-top: 32px;
+  align-items: center;
+  min-height: 60vh;
+  background: var(--main-bg-color);
+  color: var(--main-text-color);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 32px 0;
 }
 
 mat-card {
-  width: 400px;
+  width: 420px;
+  background: var(--main-bg-color);
+  color: var(--main-text-color);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+mat-card-header {
+  background: var(--bg-banner);
+  color: var(--text-white);
+  border-radius: 16px 16px 0 0;
+  padding-bottom: 12px;
+}
+
+mat-card-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+mat-card-subtitle {
+  margin-top: 8px;
+}
+
+mat-card-content {
+  padding: 24px 0 0 0;
 }
 
 .color-row {
@@ -21,4 +52,20 @@ input[type="color"] {
   height: 40px;
   border: none;
   background: none;
+  cursor: pointer;
+}
+
+button[mat-raised-button], button[mat-stroked-button] {
+  background: var(--main-button-color) !important;
+  color: #fff !important;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-top: 8px;
+}
+
+button[mat-stroked-button] {
+  background: transparent !important;
+  color: var(--main-button-color) !important;
+  border: 1.5px solid var(--main-button-color) !important;
 } 
