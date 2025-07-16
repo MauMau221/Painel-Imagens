@@ -14,7 +14,7 @@ export class BannerPrincipalComponent implements OnInit, OnDestroy {
   bannerUrl: string = '';
   bannerMobileUrl: string = '';
   resizeListener: any;
-  backendUrl = 'http://localhost:3000';
+  backendUrl = 'http://192.168.1.30:3000';
 
   constructor(private painelApi: PainelApiService, private cdr: ChangeDetectorRef) {}
 

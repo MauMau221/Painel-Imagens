@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class PainelApiService {
-  private apiUrl = 'http://localhost:3000'; // Troque pelo endereço do seu backend
+  private apiUrl = 'http://192.168.1.30:3000'; // Troque pelo endereço do seu backend
 
   constructor(private http: HttpClient) {}
 

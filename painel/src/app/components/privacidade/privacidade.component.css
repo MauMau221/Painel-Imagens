@@ -1,0 +1,19 @@
+.privacidade-section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.privacidade-section h1 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.privacidade-section p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 12px;
+} 

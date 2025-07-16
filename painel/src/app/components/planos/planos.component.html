@@ -4,31 +4,13 @@
         <p>QUAL VELOCIDADE VOCÊ PREFERE?</p>
     </div>
     <div class="planos-container">
-        <!-- Plano 500 MEGA -->
-        <a href="">
+        <a href="" *ngFor="let plano of planos">
             <div class="plano-card">
                 <div class="image-container">
-                    <img src="/assets/planos/500.png" alt="Plano 500 Mega" class="plano-img" />
+                    <img [src]="isMobile() && plano.mobile ? plano.mobile : plano.desktop" [alt]="'Plano ' + plano.nome" class="plano-img" />
                 </div>
             </div>
         </a>
-        <!-- Plano 700 MEGA -->
-        <a href="">
-            <div class="plano-card">
-                <div class="image-container">
-                    <img src="/assets/planos/700.png" alt="Plano 700 Mega" class="plano-img" />
-                </div>
-            </div>
-        </a>
-        <!-- Plano 800 MEGA -->
-        <a href="">
-            <div class="plano-card">
-                <div class="image-container">
-                    <img src="/assets/planos/800.png" alt="Plano 800 Mega" class="plano-img" />
-                </div>
-            </div>
-        </a>
-
     </div>
     <div class="credit-note">
         <p>*Desconto válido para pagamentos dentro da data de vencimento</p>

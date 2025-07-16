@@ -26,7 +26,7 @@
           <div class="upload-controls">
             <button mat-raised-button color="primary" (click)="fileInput.click()" class="select-btn">
               <mat-icon>upload</mat-icon>
-              Selecionar Nova Imagem
+              Selecionar
             </button>
             <button mat-raised-button color="accent" (click)="uploadImage(img)" [disabled]="!img.file || img.isUploading" class="upload-btn">
               <mat-icon>cloud_upload</mat-icon>
@@ -36,5 +36,55 @@
         </div>
       </mat-card-content>
     </mat-card>
+  </div>
+
+  <div class="admin-planos">
+    <h2>Gerenciar Planos</h2>
+    <div class="add-plano-form">
+      <input type="text" [(ngModel)]="novoPlanoNome" placeholder="Nome do novo plano" />
+      <button mat-raised-button color="primary" (click)="addPlano()">Adicionar Plano</button>
+    </div>
+    <div class="planos-list">
+      <mat-card *ngFor="let plano of planos; let i = index" class="plano-admin-card">
+        <mat-card-header>
+          <mat-card-title>{{ plano.nome }}</mat-card-title>
+          <button mat-icon-button color="warn" (click)="removePlano(i)" title="Remover plano">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="plano-upload-section">
+            <div class="plano-upload-item">
+              <label>Imagem Desktop:</label>
+              <img *ngIf="plano.desktop" [src]="plano.desktop" alt="Desktop" class="preview-img" style="max-width: 120px; display:block; margin-bottom:8px;" />
+              <input type="file" accept="image/*" (change)="onPlanoFileSelected($event, plano, 'desktop')" style="display:none;" #fileDesktopInput />
+              <button mat-raised-button class="select-btn" (click)="fileDesktopInput.click()">
+                <mat-icon>upload</mat-icon>
+                Selecionar
+              </button>
+              <span class="file-name" *ngIf="plano.fileDesktop">{{ plano.fileDesktop.name }}</span>
+              <button mat-raised-button color="accent" (click)="uploadPlanoImage(plano, 'desktop')" [disabled]="!plano.fileDesktop || plano.isUploadingDesktop">
+                <mat-icon>cloud_upload</mat-icon>
+                {{ plano.isUploadingDesktop ? 'Enviando...' : 'Enviar Desktop' }}
+              </button>
+            </div>
+            <div class="plano-upload-item">
+              <label>Imagem Mobile:</label>
+              <img *ngIf="plano.mobile" [src]="plano.mobile" alt="Mobile" class="preview-img" style="max-width: 120px; display:block; margin-bottom:8px;" />
+              <input type="file" accept="image/*" (change)="onPlanoFileSelected($event, plano, 'mobile')" style="display:none;" #fileMobileInput />
+              <button mat-raised-button class="select-btn" (click)="fileMobileInput.click()">
+                <mat-icon>upload</mat-icon>
+                Selecionar
+              </button>
+              <span class="file-name" *ngIf="plano.fileMobile">{{ plano.fileMobile.name }}</span>
+              <button mat-raised-button color="accent" (click)="uploadPlanoImage(plano, 'mobile')" [disabled]="!plano.fileMobile || plano.isUploadingMobile">
+                <mat-icon>cloud_upload</mat-icon>
+                {{ plano.isUploadingMobile ? 'Enviando...' : 'Enviar Mobile' }}
+              </button>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 </div> 
