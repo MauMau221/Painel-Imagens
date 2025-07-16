@@ -10,19 +10,19 @@
     overflow-x: hidden;
 }
 
-.vantagens-image {
-    width: 100%;
-    max-width: 980px;
-    height: auto;
-    display: block;
-    object-fit: contain;
-}
-
 .image-container {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.vantagens-image {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    display: block;
+    object-fit: contain;
 }
 
 /* --- RESPONSIVIDADE --- */
@@ -38,7 +38,7 @@
     }
 
     .vantagens-image {
-        max-width: 980px;
+        max-width: 1000px;
     }
 }
 
