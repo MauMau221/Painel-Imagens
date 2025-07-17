@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BannerPrincipalComponent } from './components/banner-principal/banner-principal.component';
 import { PlanosComponent } from './components/planos/planos.component';
 import { ClubeVantagensComponent } from './components/clube-vantagens/clube-vantagens.component';
@@ -28,14 +28,19 @@ import { PainelApiService } from './services/painel-api.service';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'painel-imagens';
 
   isDarkTheme = false;
   router = inject(Router);
 
   constructor(private painelApi: PainelApiService) {
-    // Carrega preferência do tema ao iniciar
+    // Remover chamadas duplicadas do construtor
+    // A lógica será feita no ngOnInit
+  }
+
+  ngOnInit() {
+    // Leia o valor do localStorage para 'theme'
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       this.isDarkTheme = savedTheme === 'dark';
@@ -72,10 +77,19 @@ export class AppComponent {
     this.painelApi.getConfig().subscribe({
       next: (config) => {
         const themeConfig = this.isDarkTheme ? config.themeDark : config.themeLight;
-        
         if (themeConfig) {
           Object.keys(themeConfig).forEach(key => {
-            document.documentElement.style.setProperty(key, themeConfig[key]);
+            // Detecta se é uma variável de fundo com gradiente
+            if (key.startsWith('--bg-') && themeConfig[key + '-2'] && themeConfig[key + '-angle']) {
+              const cor1 = themeConfig[key];
+              const cor2 = themeConfig[key + '-2'];
+              const angle = themeConfig[key + '-angle'] || '90';
+              const gradient = `linear-gradient(${angle}deg, ${cor1}, ${cor2})`;
+              document.documentElement.style.setProperty(key, gradient);
+            } else if (!key.endsWith('-2') && !key.endsWith('-angle')) {
+              // Aplica normalmente para variáveis que não são gradiente
+              document.documentElement.style.setProperty(key, themeConfig[key]);
+            }
           });
         }
       },

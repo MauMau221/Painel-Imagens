@@ -20,8 +20,25 @@
                 <div *ngFor="let v of group.variables" class="color-row">
                   <label [matTooltip]="v.label">
                     <span class="color-label">{{ v.label }}</span>
-                    <input type="color" [(ngModel)]="variablesLight[v.name]" [name]="'light-' + v.name" />
-                    <span class="color-preview" [style.background]="variablesLight[v.name]"></span>
+                    <ng-container *ngIf="v.isGradient; else singleColor">
+                      <span class="input-gradient-group">
+                        <input type="color" [(ngModel)]="variablesLight[v.name]" [name]="'light-' + v.name" />
+                        <input type="color" [(ngModel)]="variablesLight[v.name + '-2']" [name]="'light-' + v.name + '-2'" />
+                        <select [(ngModel)]="gradientAnglesLight[v.name]" [name]="'light-' + v.name + '-angle'" class="gradient-angle-select">
+                          <option value="90">90°</option>
+                          <option value="180">180°</option>
+                          <option value="270">270°</option>
+                          <option value="45">45°</option>
+                          <option value="135">135°</option>
+                          <option value="0">0°</option>
+                        </select>
+                        <span class="color-preview" [style.background]="'linear-gradient(' + gradientAnglesLight[v.name] + 'deg, ' + variablesLight[v.name] + ', ' + variablesLight[v.name + '-2'] + ')'" style="border: 2px solid #e0e6ed;"></span>
+                      </span>
+                    </ng-container>
+                    <ng-template #singleColor>
+                      <input type="color" [(ngModel)]="variablesLight[v.name]" [name]="'light-' + v.name" />
+                      <span class="color-preview" [style.background]="variablesLight[v.name]"></span>
+                    </ng-template>
                   </label>
                 </div>
               </div>
@@ -40,8 +57,25 @@
                 <div *ngFor="let v of group.variables" class="color-row">
                   <label [matTooltip]="v.label">
                     <span class="color-label">{{ v.label }}</span>
-                    <input type="color" [(ngModel)]="variablesDark[v.name]" [name]="'dark-' + v.name" />
-                    <span class="color-preview" [style.background]="variablesDark[v.name]"></span>
+                    <ng-container *ngIf="v.isGradient; else singleColorDark">
+                      <span class="input-gradient-group">
+                        <input type="color" [(ngModel)]="variablesDark[v.name]" [name]="'dark-' + v.name" />
+                        <input type="color" [(ngModel)]="variablesDark[v.name + '-2']" [name]="'dark-' + v.name + '-2'" />
+                        <select [(ngModel)]="gradientAnglesDark[v.name]" [name]="'dark-' + v.name + '-angle'" class="gradient-angle-select">
+                          <option value="90">90°</option>
+                          <option value="180">180°</option>
+                          <option value="270">270°</option>
+                          <option value="45">45°</option>
+                          <option value="135">135°</option>
+                          <option value="0">0°</option>
+                        </select>
+                        <span class="color-preview" [style.background]="'linear-gradient(' + gradientAnglesDark[v.name] + 'deg, ' + variablesDark[v.name] + ', ' + variablesDark[v.name + '-2'] + ')'" style="border: 2px solid #353f54;"></span>
+                      </span>
+                    </ng-container>
+                    <ng-template #singleColorDark>
+                      <input type="color" [(ngModel)]="variablesDark[v.name]" [name]="'dark-' + v.name" />
+                      <span class="color-preview" [style.background]="variablesDark[v.name]"></span>
+                    </ng-template>
                   </label>
                 </div>
               </div>

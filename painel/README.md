@@ -86,3 +86,15 @@ painel-backend/
 
 ---
 Dúvidas? Fale com o desenvolvedor responsável. 
+
+---
+
+## Gerenciamento de Cores e Temas
+
+- Todas as cores de fundo das seções principais (ex: Top Bar, Banner, Planos, Clube de Vantagens, Depoimentos, Contato, Footer) são controladas **exclusivamente via JavaScript** pelo painel de temas (admin-theme).
+- **Não defina variáveis de fundo (`--bg-...`) no CSS global** (`styles.css`). O painel de temas salva e aplica essas variáveis dinamicamente, inclusive com suporte a gradientes.
+- O painel de temas permite escolher duas cores e o ângulo para cada fundo, gerando um gradiente customizado para cada seção.
+- As variáveis globais genéricas (ex: `--main-bg-color`, `--primary-color`, etc.) ainda podem ser definidas no CSS global normalmente.
+- Se precisar adicionar novas seções customizáveis, siga o padrão do painel de temas e **não defina as variáveis de fundo no CSS**.
+
+> **Importante:** Se variáveis de fundo forem definidas no CSS global, elas podem sobrescrever o valor dinâmico do painel de temas e impedir o funcionamento correto do gradiente. 

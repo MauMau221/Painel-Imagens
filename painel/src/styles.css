@@ -9,35 +9,6 @@
   --text-color: #181818;
   --button-color: #0acde7;
   --button-text-color: #fff;
-  /* Variáveis de tema customizadas */
-  --bg-top-bar: #181c24;
-  --text-top-bar: #ffffff;
-  --link-top-bar: #0acde7;
-  --accent-top-bar: #0acde7;
-  --bg-banner-principal: #f4f4f4;
-  --text-banner-principal: #181c24;
-  --link-banner-principal: #0acde7;
-  --accent-banner-principal: #0acde7;
-  --bg-planos: #ffffff;
-  --text-planos: #232b3a;
-  --link-planos: #0acde7;
-  --accent-planos: #0acde7;
-  --bg-clube-vantagens: #ffffff;
-  --text-clube-vantagens: #181c24;
-  --link-clube-vantagens: #0acde7;
-  --accent-clube-vantagens: #0acde7;
-  --bg-depoimentos: #f4f4f4;
-  --text-depoimentos: #232b3a;
-  --link-depoimentos: #0acde7;
-  --accent-depoimentos: #0acde7;
-  --bg-contato: #ffffff;
-  --text-contato: #181c24;
-  --link-contato: #0acde7;
-  --accent-contato: #25d366;
-  --bg-footer: #181c24;
-  --text-footer: #ffffff;
-  --link-footer: #0acde7;
-  --accent-footer: #0acde7;
 }
 
 .dark-theme {
@@ -48,35 +19,6 @@
   --text-color: #f5f6fa;
   --button-color: #0acde7;
   --button-text-color: #fff;
-  /* Variáveis de tema customizadas */
-  --bg-top-bar: #232b3a;
-  --text-top-bar: #ffffff;
-  --link-top-bar: #0acde7;
-  --accent-top-bar: #0acde7;
-  --bg-banner-principal: #181c24;
-  --text-banner-principal: #f4f4f4;
-  --link-banner-principal: #0acde7;
-  --accent-banner-principal: #0acde7;
-  --bg-planos: #232b3a;
-  --text-planos: #f4f4f4;
-  --link-planos: #0acde7;
-  --accent-planos: #0acde7;
-  --bg-clube-vantagens: #181c24;
-  --text-clube-vantagens: #f4f4f4;
-  --link-clube-vantagens: #0acde7;
-  --accent-clube-vantagens: #0acde7;
-  --bg-depoimentos: #232b3a;
-  --text-depoimentos: #f4f4f4;
-  --link-depoimentos: #0acde7;
-  --accent-depoimentos: #0acde7;
-  --bg-contato: #181c24;
-  --text-contato: #f4f4f4;
-  --link-contato: #0acde7;
-  --accent-contato: #25d366;
-  --bg-footer: #232b3a;
-  --text-footer: #ffffff;
-  --link-footer: #0acde7;
-  --accent-footer: #0acde7;
 }
 
 /* =========================

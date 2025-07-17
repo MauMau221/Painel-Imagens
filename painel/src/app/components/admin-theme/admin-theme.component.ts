@@ -15,45 +15,50 @@ interface ThemeVariable {
   label: string;
   defaultLight: string;
   defaultDark: string;
+  isGradient?: boolean; // novo campo para identificar variáveis de fundo
 }
 
 const THEME_VARIABLES: ThemeVariable[] = [
   // Top Bar
-  { name: '--bg-top-bar', label: 'Fundo do Top Bar', defaultLight: '#181c24', defaultDark: '#232b3a' },
+  { name: '--bg-top-bar', label: 'Fundo do Top Bar', defaultLight: '#181c24', defaultDark: '#232b3a', isGradient: true },
   { name: '--text-top-bar', label: 'Texto do Top Bar', defaultLight: '#ffffff', defaultDark: '#ffffff' },
   { name: '--link-top-bar', label: 'Link do Top Bar', defaultLight: '#0acde7', defaultDark: '#0acde7' },
   { name: '--accent-top-bar', label: 'Botão/Ícone do Top Bar', defaultLight: '#0acde7', defaultDark: '#0acde7' },
   // Banner Principal
-  { name: '--bg-banner-principal', label: 'Fundo do Banner Principal', defaultLight: '#f4f4f4', defaultDark: '#181c24' },
+  { name: '--bg-banner-principal', label: 'Fundo do Banner Principal', defaultLight: '#f4f4f4', defaultDark: '#181c24', isGradient: true },
   { name: '--text-banner-principal', label: 'Texto do Banner Principal', defaultLight: '#181c24', defaultDark: '#f4f4f4' },
   { name: '--link-banner-principal', label: 'Link do Banner Principal', defaultLight: '#0acde7', defaultDark: '#0acde7' },
   { name: '--accent-banner-principal', label: 'Botão/Ícone do Banner Principal', defaultLight: '#0acde7', defaultDark: '#0acde7' },
   // Planos
-  { name: '--bg-planos', label: 'Fundo dos Planos', defaultLight: '#ffffff', defaultDark: '#232b3a' },
+  { name: '--bg-planos', label: 'Fundo dos Planos', defaultLight: '#ffffff', defaultDark: '#232b3a', isGradient: true },
   { name: '--text-planos', label: 'Texto dos Planos', defaultLight: '#232b3a', defaultDark: '#f4f4f4' },
   { name: '--link-planos', label: 'Link dos Planos', defaultLight: '#0acde7', defaultDark: '#0acde7' },
   { name: '--accent-planos', label: 'Botão/Ícone dos Planos', defaultLight: '#0acde7', defaultDark: '#0acde7' },
   // Clube de Vantagens
-  { name: '--bg-clube-vantagens', label: 'Fundo do Clube de Vantagens', defaultLight: '#ffffff', defaultDark: '#181c24' },
+  { name: '--bg-clube-vantagens', label: 'Fundo do Clube de Vantagens', defaultLight: '#ffffff', defaultDark: '#181c24', isGradient: true },
   { name: '--text-clube-vantagens', label: 'Texto do Clube de Vantagens', defaultLight: '#181c24', defaultDark: '#f4f4f4' },
   { name: '--link-clube-vantagens', label: 'Link do Clube de Vantagens', defaultLight: '#0acde7', defaultDark: '#0acde7' },
   { name: '--accent-clube-vantagens', label: 'Botão/Ícone do Clube de Vantagens', defaultLight: '#0acde7', defaultDark: '#0acde7' },
   // Depoimentos
-  { name: '--bg-depoimentos', label: 'Fundo dos Depoimentos', defaultLight: '#f4f4f4', defaultDark: '#232b3a' },
+  { name: '--bg-depoimentos', label: 'Fundo dos Depoimentos', defaultLight: '#f4f4f4', defaultDark: '#232b3a', isGradient: true },
   { name: '--text-depoimentos', label: 'Texto dos Depoimentos', defaultLight: '#232b3a', defaultDark: '#f4f4f4' },
   { name: '--link-depoimentos', label: 'Link dos Depoimentos', defaultLight: '#0acde7', defaultDark: '#0acde7' },
   { name: '--accent-depoimentos', label: 'Botão/Ícone dos Depoimentos', defaultLight: '#0acde7', defaultDark: '#0acde7' },
   // Contato
-  { name: '--bg-contato', label: 'Fundo do Contato', defaultLight: '#ffffff', defaultDark: '#181c24' },
+  { name: '--bg-contato', label: 'Fundo do Contato', defaultLight: '#ffffff', defaultDark: '#181c24', isGradient: true },
   { name: '--text-contato', label: 'Texto do Contato', defaultLight: '#181c24', defaultDark: '#f4f4f4' },
   { name: '--link-contato', label: 'Link do Contato', defaultLight: '#0acde7', defaultDark: '#0acde7' },
   { name: '--accent-contato', label: 'Botão/Ícone do Contato', defaultLight: '#25d366', defaultDark: '#25d366' },
   // Footer
-  { name: '--bg-footer', label: 'Fundo do Footer', defaultLight: '#181c24', defaultDark: '#232b3a' },
+  { name: '--bg-footer', label: 'Fundo do Footer', defaultLight: '#181c24', defaultDark: '#232b3a', isGradient: true },
   { name: '--text-footer', label: 'Texto do Footer', defaultLight: '#ffffff', defaultDark: '#ffffff' },
   { name: '--link-footer', label: 'Link do Footer', defaultLight: '#0acde7', defaultDark: '#0acde7' },
   { name: '--accent-footer', label: 'Botão/Ícone do Footer', defaultLight: '#0acde7', defaultDark: '#0acde7' },
 ];
+
+// Adicionar variáveis para segunda cor do gradiente e ângulo
+const GRADIENT_SUFFIX = '-2';
+const GRADIENT_ANGLE_SUFFIX = '-angle';
 
 @Component({
   selector: 'app-admin-theme',
@@ -75,6 +80,8 @@ const THEME_VARIABLES: ThemeVariable[] = [
 export class AdminThemeComponent implements OnInit {
   variablesLight: { [key: string]: string } = {};
   variablesDark: { [key: string]: string } = {};
+  gradientAnglesLight: { [key: string]: string } = {};
+  gradientAnglesDark: { [key: string]: string } = {};
   public THEME_VARIABLES = THEME_VARIABLES;
   public componentGroups: { name: string, label: string, variables: ThemeVariable[] }[] = [];
 
@@ -90,15 +97,33 @@ export class AdminThemeComponent implements OnInit {
       const themeLight = config['themeLight'] || {};
       const themeDark = config['themeDark'] || {};
       THEME_VARIABLES.forEach(v => {
-        this.variablesLight[v.name] = themeLight[v.name] || v.defaultLight;
-        this.variablesDark[v.name] = themeDark[v.name] || v.defaultDark;
+        if (v.isGradient) {
+          this.variablesLight[v.name] = themeLight[v.name] || v.defaultLight;
+          this.variablesLight[v.name + GRADIENT_SUFFIX] = themeLight[v.name + GRADIENT_SUFFIX] || v.defaultLight;
+          this.variablesDark[v.name] = themeDark[v.name] || v.defaultDark;
+          this.variablesDark[v.name + GRADIENT_SUFFIX] = themeDark[v.name + GRADIENT_SUFFIX] || v.defaultDark;
+          this.gradientAnglesLight[v.name] = themeLight[v.name + GRADIENT_ANGLE_SUFFIX] || '90';
+          this.gradientAnglesDark[v.name] = themeDark[v.name + GRADIENT_ANGLE_SUFFIX] || '90';
+        } else {
+          this.variablesLight[v.name] = themeLight[v.name] || v.defaultLight;
+          this.variablesDark[v.name] = themeDark[v.name] || v.defaultDark;
+        }
       });
     });
   }
 
   applyThemeVariables(variables: { [key: string]: string }, isDark: boolean) {
     THEME_VARIABLES.forEach(v => {
-      document.documentElement.style.setProperty(v.name, variables[v.name]);
+      if (v.isGradient) {
+        const color1 = variables[v.name];
+        const color2 = variables[v.name + GRADIENT_SUFFIX];
+        const angle = (isDark ? this.gradientAnglesDark[v.name] : this.gradientAnglesLight[v.name]) || '90';
+        // Sempre monta o gradiente completo na variável principal
+        const gradient = `linear-gradient(${angle}deg, ${color1}, ${color2})`;
+        document.documentElement.style.setProperty(v.name, gradient);
+      } else {
+        document.documentElement.style.setProperty(v.name, variables[v.name]);
+      }
     });
     if (isDark) {
       document.documentElement.classList.add('dark-theme');
@@ -108,10 +133,23 @@ export class AdminThemeComponent implements OnInit {
   }
 
   updateColors() {
-    const configUpdate = {
-      themeLight: this.variablesLight,
-      themeDark: this.variablesDark
+    const configUpdate: any = {
+      themeLight: {},
+      themeDark: {}
     };
+    THEME_VARIABLES.forEach(v => {
+      if (v.isGradient) {
+        configUpdate.themeLight[v.name] = this.variablesLight[v.name];
+        configUpdate.themeLight[v.name + GRADIENT_SUFFIX] = this.variablesLight[v.name + GRADIENT_SUFFIX];
+        configUpdate.themeLight[v.name + GRADIENT_ANGLE_SUFFIX] = this.gradientAnglesLight[v.name] || '90';
+        configUpdate.themeDark[v.name] = this.variablesDark[v.name];
+        configUpdate.themeDark[v.name + GRADIENT_SUFFIX] = this.variablesDark[v.name + GRADIENT_SUFFIX];
+        configUpdate.themeDark[v.name + GRADIENT_ANGLE_SUFFIX] = this.gradientAnglesDark[v.name] || '90';
+      } else {
+        configUpdate.themeLight[v.name] = this.variablesLight[v.name];
+        configUpdate.themeDark[v.name] = this.variablesDark[v.name];
+      }
+    });
     this.painelApi.updateConfig(configUpdate).subscribe(() => {
       this.showMessage('Cores dos temas salvas!', 'success');
     }, error => {

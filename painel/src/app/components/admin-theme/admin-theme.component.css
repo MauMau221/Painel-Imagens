@@ -146,8 +146,14 @@
 .theme-form-dark .color-label {
   color: #e0e6ed;
 }
+.input-gradient-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
 input[type="color"] {
-  margin-left: 8px;
+  margin-left: 0;
+  margin-right: 0;
   width: 48px;
   height: 48px;
   border: 2px solid #e0e6ed;
@@ -176,6 +182,29 @@ input[type="color"]:hover, input[type="color"]:focus {
 }
 .theme-form-dark .color-preview {
   border: 2px solid #353f54;
+}
+
+.gradient-angle-select {
+  margin-left: 8px;
+  margin-right: 8px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1.5px solid #e0e6ed;
+  background: #fff;
+  font-size: 1em;
+  color: #232b3a;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  transition: border-color 0.2s;
+  outline: none;
+  height: 38px;
+}
+.theme-form-dark .gradient-angle-select {
+  background: #2d3748;
+  border: 1.5px solid #353f54;
+  color: #e0e6ed;
+}
+.gradient-angle-select:focus {
+  border-color: var(--primary-color, #0acde7);
 }
 
 @media (max-width: 1200px) {
