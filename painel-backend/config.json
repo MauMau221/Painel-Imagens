@@ -15,9 +15,28 @@
     "--main-link-color": "#1976d2",
     "--main-button-color": "#388e3c"
   },
-  "image": "/uploads/1752625159926-",
-  "banner": "/uploads/1752613988216-",
+  "image": "/uploads/1752695137015-",
+  "banner": "/uploads/1752685960009-",
   "bannerMobile": "/uploads/1752617708575-",
-  "vantagens": "/uploads/1752625159926-",
-  "depoimentos": "/uploads/1752617745746-"
+  "vantagens": "/uploads/1752669848280-",
+  "depoimentos": "/uploads/1752689981161-",
+  "vantagensMobile": "/uploads/1752684467994-",
+  "depoimentosMobile": "/uploads/1752684469275-",
+  "planos": [
+    {
+      "nome": "500 Mega",
+      "desktop": "/uploads/1752686115962-",
+      "mobile": ""
+    },
+    {
+      "nome": "700 Mega",
+      "desktop": "/uploads/1752686114737-",
+      "mobile": ""
+    },
+    {
+      "nome": "800 Mega",
+      "desktop": "/uploads/1752686113981-",
+      "mobile": ""
+    }
+  ]
 }
