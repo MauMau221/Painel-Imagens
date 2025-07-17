@@ -1,4 +1,6 @@
 .banner-container {
+  background: var(--bg-banner-principal, #f4f4f4);
+  color: var(--text-banner-principal, #181c24);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,6 +10,15 @@
   padding: 60px 80px;
   box-sizing: border-box;
   overflow-x: hidden;
+}
+
+.banner-container a, .banner-container a:visited {
+  color: var(--link-banner-principal, #0acde7);
+}
+
+.banner-container button, .banner-container .mat-raised-button {
+  background: var(--accent-banner-principal, #0acde7);
+  color: var(--text-banner-principal, #fff);
 }
 
 .banner-content {

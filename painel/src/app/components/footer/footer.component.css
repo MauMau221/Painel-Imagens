@@ -1,10 +1,20 @@
 .footer-section {
-    color: var(--text-white);
+    background: var(--bg-footer, #181c24);
+    color: var(--text-footer, #fff);
     font-family: 'Montserrat', sans-serif;
     padding: 40px 60px 20px 60px;
     position: relative;
     width: 100%;
     overflow-x: hidden;
+}
+
+.footer-section a, .footer-section a:visited {
+    color: var(--link-footer, #0acde7);
+}
+
+.footer-section button, .footer-section .mat-raised-button {
+    background: var(--accent-footer, #0acde7);
+    color: var(--text-footer, #fff);
 }
 
 .footer-container {

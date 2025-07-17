@@ -1,4 +1,6 @@
 .clube-vantagens-section {
+    background: var(--bg-clube-vantagens, #ffffff);
+    color: var(--text-clube-vantagens, #181c24);
     min-height: 40vh;
     width: 100%;
     display: flex;
@@ -8,6 +10,15 @@
     padding: 40px 10px;
     box-sizing: border-box;
     overflow-x: hidden;
+}
+
+.clube-vantagens-section a, .clube-vantagens-section a:visited {
+    color: var(--link-clube-vantagens, #0acde7);
+}
+
+.clube-vantagens-section button, .clube-vantagens-section .mat-raised-button {
+    background: var(--accent-clube-vantagens, #0acde7);
+    color: var(--text-clube-vantagens, #fff);
 }
 
 .image-container {

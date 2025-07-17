@@ -7,7 +7,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { PainelApiService } from '../../services/painel-api.service';
+import { environment } from '../../../environments/environment';
 
 interface AdminImage {
   key: string;
@@ -33,7 +35,8 @@ const IMAGES: { key: string; label: string }[] = [
   { key: 'depoimentos', label: 'Imagem Depoimentos (Desktop)' },
   { key: 'depoimentosMobile', label: 'Imagem Depoimentos (Mobile)' },
   { key: 'vantagens', label: 'Imagem Vantagens (Desktop)' },
-  { key: 'vantagensMobile', label: 'Imagem Vantagens (Mobile)' }
+  { key: 'vantagensMobile', label: 'Imagem Vantagens (Mobile)' },
+  { key: 'atendente', label: 'Imagem do Atendente (Contato)' }
 ];
 
 @Component({
@@ -54,34 +57,41 @@ const IMAGES: { key: string; label: string }[] = [
 })
 export class AdminImagesComponent implements OnInit {
   images: AdminImage[] = [];
-  backendUrl = 'http://192.168.1.30:3000';
+  backendUrl = environment.backendUrl;
   planos: AdminPlano[] = [];
   novoPlanoNome: string = '';
 
   constructor(
     private painelApi: PainelApiService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.painelApi.getConfig().subscribe(config => {
-      this.images = IMAGES.map(img => ({
-        key: img.key,
-        label: img.label,
-        url: config[img.key] ? this.backendUrl + config[img.key] : '',
-        file: null,
-        isUploading: false
-      }));
-      // Carrega planos do config
-      this.planos = (config.planos || []).map((p: any) => ({
-        nome: p.nome,
-        desktop: p.desktop ? this.backendUrl + p.desktop : '',
-        mobile: p.mobile ? this.backendUrl + p.mobile : '',
-        fileDesktop: null,
-        fileMobile: null,
-        isUploadingDesktop: false,
-        isUploadingMobile: false
-      }));
+    this.painelApi.getAdminConfig().subscribe({
+      next: (config) => {
+        this.images = IMAGES.map(img => ({
+          key: img.key,
+          label: img.label,
+          url: config[img.key] ? this.backendUrl + config[img.key] : '',
+          file: null,
+          isUploading: false
+        }));
+        // Carrega planos do config
+        this.planos = (config.planos || []).map((p: any) => ({
+          nome: p.nome,
+          desktop: p.desktop ? this.backendUrl + p.desktop : '',
+          mobile: p.mobile ? this.backendUrl + p.mobile : '',
+          fileDesktop: null,
+          fileMobile: null,
+          isUploadingDesktop: false,
+          isUploadingMobile: false
+        }));
+      },
+      error: (error) => {
+        console.error('Erro ao carregar configurações:', error);
+        this.showMessage('Erro ao carregar dados do painel', 'error');
+      }
     });
   }
 
@@ -199,6 +209,15 @@ export class AdminImagesComponent implements OnInit {
       horizontalPosition: 'center',
       verticalPosition: 'top',
       panelClass: type === 'success' ? ['success-snackbar'] : ['error-snackbar']
+    });
+  }
+
+  logout() {
+    this.painelApi.logout().subscribe(() => {
+      this.showMessage('Logout realizado com sucesso!', 'success');
+      this.router.navigate(['/admin-login']);
+    }, () => {
+      this.showMessage('Erro ao fazer logout', 'error');
     });
   }
 } 

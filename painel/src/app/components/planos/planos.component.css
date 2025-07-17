@@ -1,10 +1,20 @@
 .planos-section {
+    background: var(--bg-planos, #ffffff);
+    color: var(--text-planos, #232b3a);
     padding: 20px 80px;
-    color: var(--text-white);
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     width: 100%;
     overflow-x: hidden;
+}
+
+.planos-section a, .planos-section a:visited {
+    color: var(--link-planos, #0acde7);
+}
+
+.plano-card button, .plano-card .mat-raised-button {
+    background: var(--accent-planos, #0acde7);
+    color: var(--text-planos, #fff);
 }
 
 .section-title p {

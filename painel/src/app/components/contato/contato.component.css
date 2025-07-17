@@ -1,10 +1,21 @@
 .contato-section {
+    background: var(--bg-contato, #ffffff);
+    color: var(--text-contato, #181c24);
     font-family: 'Montserrat', sans-serif;
     padding: 80px 80px 0;
     position: relative;
     overflow: hidden;
     width: 100%;
     overflow-x: hidden;
+}
+
+.contato-section a, .contato-section a:visited {
+    color: var(--link-contato, #0acde7);
+}
+
+.whatsapp-button, .action-button, .action-button.sac {
+    background: var(--accent-contato, #25d366);
+    color: var(--text-contato, #fff);
 }
 
 .contato-wrapper {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { PainelApiService } from '../../services/painel-api.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-depoimentos',
@@ -11,7 +12,7 @@ import { PainelApiService } from '../../services/painel-api.service';
 export class DepoimentosComponent implements OnInit {
   depoimentosUrl: string = '';
   depoimentosMobileUrl: string = '';
-  backendUrl = 'http://192.168.1.30:3000';
+  backendUrl = environment.backendUrl;
 
   constructor(private painelApi: PainelApiService) {}
 

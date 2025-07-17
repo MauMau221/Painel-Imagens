@@ -1,28 +1,54 @@
 <div class="admin-theme-container">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Personalização de Cores Globais</mat-card-title>
-      <mat-card-subtitle>
-        <button mat-stroked-button color="primary" type="button" (click)="toggleThemeEdit()">
-          <mat-icon>{{ isDark ? 'dark_mode' : 'light_mode' }}</mat-icon>
-          Editar tema {{ isDark ? 'escuro' : 'claro' }}
-        </button>
-      </mat-card-subtitle>
+  <mat-card class="theme-panel-card">
+    <mat-card-header class="theme-panel-header">
+      <button mat-raised-button color="primary" type="submit" class="save-btn" (click)="updateColors()">
+        <mat-icon>palette</mat-icon>
+        Salvar Cores
+      </button>
     </mat-card-header>
     <mat-card-content>
-      <form>
-        <div *ngFor="let v of variables | keyvalue" class="color-row">
-          <label>{{ getLabel(v.key) }}:
-            <input type="color" [(ngModel)]="variables[v.key]" [name]="v.key" />
-          </label>
+      <div class="theme-forms-row">
+        <div class="theme-form theme-form-light">
+          <h3><mat-icon>light_mode</mat-icon> Tema Claro</h3>
+          <ng-container *ngFor="let group of componentGroups">
+            <mat-card class="component-card">
+              <mat-card-title class="component-title">
+                <mat-icon class="component-icon">{{ getComponentIcon(group.name) }}</mat-icon>
+                {{ group.label }}
+              </mat-card-title>
+              <div class="color-row-group">
+                <div *ngFor="let v of group.variables" class="color-row">
+                  <label [matTooltip]="v.label">
+                    <span class="color-label">{{ v.label }}</span>
+                    <input type="color" [(ngModel)]="variablesLight[v.name]" [name]="'light-' + v.name" />
+                    <span class="color-preview" [style.background]="variablesLight[v.name]"></span>
+                  </label>
+                </div>
+              </div>
+            </mat-card>
+          </ng-container>
         </div>
-        <div class="color-row">
-          <button mat-raised-button color="primary" type="button" (click)="updateColors()">
-            <mat-icon>palette</mat-icon>
-            Aplicar Cores
-          </button>
+        <div class="theme-form theme-form-dark">
+          <h3><mat-icon>dark_mode</mat-icon> Tema Escuro</h3>
+          <ng-container *ngFor="let group of componentGroups">
+            <mat-card class="component-card">
+              <mat-card-title class="component-title">
+                <mat-icon class="component-icon">{{ getComponentIcon(group.name) }}</mat-icon>
+                {{ group.label }}
+              </mat-card-title>
+              <div class="color-row-group">
+                <div *ngFor="let v of group.variables" class="color-row">
+                  <label [matTooltip]="v.label">
+                    <span class="color-label">{{ v.label }}</span>
+                    <input type="color" [(ngModel)]="variablesDark[v.name]" [name]="'dark-' + v.name" />
+                    <span class="color-preview" [style.background]="variablesDark[v.name]"></span>
+                  </label>
+                </div>
+              </div>
+            </mat-card>
+          </ng-container>
         </div>
-      </form>
+      </div>
     </mat-card-content>
   </mat-card>
 </div> 

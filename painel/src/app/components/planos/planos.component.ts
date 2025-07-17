@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { PainelApiService } from '../../services/painel-api.service';
+import { environment } from '../../../environments/environment';
 
 export interface Plano {
   nome: string;
@@ -17,7 +18,7 @@ export interface Plano {
   styleUrl: './planos.component.css'
 })
 export class PlanosComponent implements OnInit {
-  backendUrl = 'http://192.168.1.30:3000';
+  backendUrl = environment.backendUrl;
   planos: Plano[] = [];
 
   constructor(private painelApi: PainelApiService) {}
@@ -27,13 +28,23 @@ export class PlanosComponent implements OnInit {
       // Agora busca do array 'planos' do config
       this.planos = (config.planos || []).map((p: any) => ({
         nome: p.nome,
-        desktop: this.backendUrl + p.desktop,
-        mobile: p.mobile ? this.backendUrl + p.mobile : undefined
+        desktop: this.concatUrl(this.backendUrl, p.desktop),
+        mobile: p.mobile ? this.concatUrl(this.backendUrl, p.mobile) : undefined
       }));
     });
   }
 
   isMobile(): boolean {
     return window.innerWidth <= 794;
+  }
+
+  concatUrl(base: string, path: string): string {
+    if (!base.endsWith('/') && !path.startsWith('/')) {
+      return base + '/' + path;
+    }
+    if (base.endsWith('/') && path.startsWith('/')) {
+      return base + path.substring(1);
+    }
+    return base + path;
   }
 }

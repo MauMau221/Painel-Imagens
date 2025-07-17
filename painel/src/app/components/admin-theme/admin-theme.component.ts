@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { PainelApiService } from '../../services/painel-api.service';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 interface ThemeVariable {
   name: string;
@@ -17,20 +18,41 @@ interface ThemeVariable {
 }
 
 const THEME_VARIABLES: ThemeVariable[] = [
-  { name: '--color-dark-blue', label: 'Azul Escuro', defaultLight: '#000018', defaultDark: '#181818' },
-  { name: '--color-blue', label: 'Azul', defaultLight: '#026cc8', defaultDark: '#23234a' },
-  { name: '--color-orange', label: 'Laranja', defaultLight: '#0acde7', defaultDark: '#026cc8' },
-  { name: '--color-white', label: 'Branco', defaultLight: '#ffffff', defaultDark: '#181818' },
-  { name: '--color-light-gray', label: 'Cinza Claro', defaultLight: '#f4f4f4', defaultDark: '#23234a' },
-  { name: '--color-cyan', label: 'Ciano', defaultLight: '#0acde7', defaultDark: '#0acde7' },
-  { name: '--color-cyan-hover', label: 'Ciano Hover', defaultLight: '#6de5f5', defaultDark: '#6de5f5' },
-  { name: '--color-orange-light', label: 'Laranja Claro', defaultLight: '#ffc373', defaultDark: '#23234a' },
-  { name: '--color-whatsapp-green', label: 'Verde WhatsApp', defaultLight: '#25d366', defaultDark: '#128c7e' },
-  { name: '--color-whatsapp-hover', label: 'WhatsApp Hover', defaultLight: '#20b859', defaultDark: '#075e54' },
-  { name: '--main-bg-color', label: 'Fundo Principal', defaultLight: '#ffffff', defaultDark: '#181818' },
-  { name: '--main-text-color', label: 'Texto Principal', defaultLight: '#000000', defaultDark: '#ffffff' },
-  { name: '--main-link-color', label: 'Links', defaultLight: '#1976d2', defaultDark: '#90caf9' },
-  { name: '--main-button-color', label: 'Botões', defaultLight: '#388e3c', defaultDark: '#43a047' }
+  // Top Bar
+  { name: '--bg-top-bar', label: 'Fundo do Top Bar', defaultLight: '#181c24', defaultDark: '#232b3a' },
+  { name: '--text-top-bar', label: 'Texto do Top Bar', defaultLight: '#ffffff', defaultDark: '#ffffff' },
+  { name: '--link-top-bar', label: 'Link do Top Bar', defaultLight: '#0acde7', defaultDark: '#0acde7' },
+  { name: '--accent-top-bar', label: 'Botão/Ícone do Top Bar', defaultLight: '#0acde7', defaultDark: '#0acde7' },
+  // Banner Principal
+  { name: '--bg-banner-principal', label: 'Fundo do Banner Principal', defaultLight: '#f4f4f4', defaultDark: '#181c24' },
+  { name: '--text-banner-principal', label: 'Texto do Banner Principal', defaultLight: '#181c24', defaultDark: '#f4f4f4' },
+  { name: '--link-banner-principal', label: 'Link do Banner Principal', defaultLight: '#0acde7', defaultDark: '#0acde7' },
+  { name: '--accent-banner-principal', label: 'Botão/Ícone do Banner Principal', defaultLight: '#0acde7', defaultDark: '#0acde7' },
+  // Planos
+  { name: '--bg-planos', label: 'Fundo dos Planos', defaultLight: '#ffffff', defaultDark: '#232b3a' },
+  { name: '--text-planos', label: 'Texto dos Planos', defaultLight: '#232b3a', defaultDark: '#f4f4f4' },
+  { name: '--link-planos', label: 'Link dos Planos', defaultLight: '#0acde7', defaultDark: '#0acde7' },
+  { name: '--accent-planos', label: 'Botão/Ícone dos Planos', defaultLight: '#0acde7', defaultDark: '#0acde7' },
+  // Clube de Vantagens
+  { name: '--bg-clube-vantagens', label: 'Fundo do Clube de Vantagens', defaultLight: '#ffffff', defaultDark: '#181c24' },
+  { name: '--text-clube-vantagens', label: 'Texto do Clube de Vantagens', defaultLight: '#181c24', defaultDark: '#f4f4f4' },
+  { name: '--link-clube-vantagens', label: 'Link do Clube de Vantagens', defaultLight: '#0acde7', defaultDark: '#0acde7' },
+  { name: '--accent-clube-vantagens', label: 'Botão/Ícone do Clube de Vantagens', defaultLight: '#0acde7', defaultDark: '#0acde7' },
+  // Depoimentos
+  { name: '--bg-depoimentos', label: 'Fundo dos Depoimentos', defaultLight: '#f4f4f4', defaultDark: '#232b3a' },
+  { name: '--text-depoimentos', label: 'Texto dos Depoimentos', defaultLight: '#232b3a', defaultDark: '#f4f4f4' },
+  { name: '--link-depoimentos', label: 'Link dos Depoimentos', defaultLight: '#0acde7', defaultDark: '#0acde7' },
+  { name: '--accent-depoimentos', label: 'Botão/Ícone dos Depoimentos', defaultLight: '#0acde7', defaultDark: '#0acde7' },
+  // Contato
+  { name: '--bg-contato', label: 'Fundo do Contato', defaultLight: '#ffffff', defaultDark: '#181c24' },
+  { name: '--text-contato', label: 'Texto do Contato', defaultLight: '#181c24', defaultDark: '#f4f4f4' },
+  { name: '--link-contato', label: 'Link do Contato', defaultLight: '#0acde7', defaultDark: '#0acde7' },
+  { name: '--accent-contato', label: 'Botão/Ícone do Contato', defaultLight: '#25d366', defaultDark: '#25d366' },
+  // Footer
+  { name: '--bg-footer', label: 'Fundo do Footer', defaultLight: '#181c24', defaultDark: '#232b3a' },
+  { name: '--text-footer', label: 'Texto do Footer', defaultLight: '#ffffff', defaultDark: '#ffffff' },
+  { name: '--link-footer', label: 'Link do Footer', defaultLight: '#0acde7', defaultDark: '#0acde7' },
+  { name: '--accent-footer', label: 'Botão/Ícone do Footer', defaultLight: '#0acde7', defaultDark: '#0acde7' },
 ];
 
 @Component({
@@ -44,62 +66,115 @@ const THEME_VARIABLES: ThemeVariable[] = [
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTooltipModule
   ],
   templateUrl: './admin-theme.component.html',
   styleUrl: './admin-theme.component.css'
 })
 export class AdminThemeComponent implements OnInit {
-  isDark = false;
-  variables: { [key: string]: string } = {};
+  variablesLight: { [key: string]: string } = {};
+  variablesDark: { [key: string]: string } = {};
   public THEME_VARIABLES = THEME_VARIABLES;
+  public componentGroups: { name: string, label: string, variables: ThemeVariable[] }[] = [];
 
   constructor(private snackBar: MatSnackBar, private painelApi: PainelApiService) {}
 
   ngOnInit(): void {
-    this.painelApi.getConfig().subscribe(config => {
-      const themeVars = this.isDark ? config.themeDark : config.themeLight;
+    this.loadThemeConfig();
+    this.componentGroups = this.buildComponentGroups();
+  }
+
+  loadThemeConfig() {
+    this.painelApi.getAdminConfig().subscribe(config => {
+      const themeLight = config['themeLight'] || {};
+      const themeDark = config['themeDark'] || {};
       THEME_VARIABLES.forEach(v => {
-        this.variables[v.name] = (themeVars && themeVars[v.name]) || (this.isDark ? v.defaultDark : v.defaultLight);
+        this.variablesLight[v.name] = themeLight[v.name] || v.defaultLight;
+        this.variablesDark[v.name] = themeDark[v.name] || v.defaultDark;
       });
-      this.applyThemeVariables();
     });
   }
 
-  applyThemeVariables() {
+  applyThemeVariables(variables: { [key: string]: string }, isDark: boolean) {
     THEME_VARIABLES.forEach(v => {
-      if (this.isDark) {
-        document.documentElement.classList.add('dark-theme');
-        document.documentElement.style.setProperty(v.name, this.variables[v.name]);
-      } else {
-        document.documentElement.classList.remove('dark-theme');
-        document.documentElement.style.setProperty(v.name, this.variables[v.name]);
-      }
+      document.documentElement.style.setProperty(v.name, variables[v.name]);
     });
+    if (isDark) {
+      document.documentElement.classList.add('dark-theme');
+    } else {
+      document.documentElement.classList.remove('dark-theme');
+    }
   }
 
   updateColors() {
-    const configUpdate = this.isDark
-      ? { themeDark: this.variables }
-      : { themeLight: this.variables };
+    const configUpdate = {
+      themeLight: this.variablesLight,
+      themeDark: this.variablesDark
+    };
     this.painelApi.updateConfig(configUpdate).subscribe(() => {
-      this.applyThemeVariables();
-      this.snackBar.open('Cores do tema ' + (this.isDark ? 'escuro' : 'claro') + ' salvas!', 'Fechar', {
-        duration: 3000,
-        horizontalPosition: 'center',
-        verticalPosition: 'top',
-        panelClass: ['success-snackbar']
-      });
+      this.showMessage('Cores dos temas salvas!', 'success');
+    }, error => {
+      this.showMessage('Erro ao salvar cores!', 'error');
     });
-  }
-
-  toggleThemeEdit() {
-    this.isDark = !this.isDark;
-    this.ngOnInit();
   }
 
   getLabel(key: string): string {
     const found = this.THEME_VARIABLES.find(t => t.name === key);
     return found ? found.label : key;
+  }
+
+  buildComponentGroups() {
+    // Agrupa as variáveis por componente
+    const groups: { name: string, label: string, variables: ThemeVariable[] }[] = [];
+    const map: { [key: string]: { name: string, label: string, variables: ThemeVariable[] } } = {};
+    for (const v of THEME_VARIABLES) {
+      const match = v.name.match(/^--(bg|text|link|accent)-([a-z-]+)/);
+      if (match) {
+        const comp = match[2];
+        const label = this.getComponentLabel(comp);
+        if (!map[comp]) {
+          map[comp] = { name: comp, label, variables: [] };
+          groups.push(map[comp]);
+        }
+        map[comp].variables.push(v);
+      }
+    }
+    return groups;
+  }
+
+  getComponentLabel(comp: string): string {
+    switch (comp) {
+      case 'top-bar': return 'Top Bar';
+      case 'banner-principal': return 'Banner Principal';
+      case 'planos': return 'Planos';
+      case 'clube-vantagens': return 'Clube de Vantagens';
+      case 'depoimentos': return 'Depoimentos';
+      case 'contato': return 'Contato';
+      case 'footer': return 'Footer';
+      default: return comp;
+    }
+  }
+
+  getComponentIcon(comp: string): string {
+    switch (comp) {
+      case 'top-bar': return 'space_dashboard';
+      case 'banner-principal': return 'photo';
+      case 'planos': return 'signal_cellular_alt';
+      case 'clube-vantagens': return 'card_giftcard';
+      case 'depoimentos': return 'chat';
+      case 'contato': return 'support_agent';
+      case 'footer': return 'horizontal_rule';
+      default: return 'widgets';
+    }
+  }
+
+  showMessage(message: string, type: 'success' | 'error'): void {
+    this.snackBar.open(message, 'Fechar', {
+      duration: 3000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+      panelClass: type === 'success' ? ['success-snackbar'] : ['error-snackbar']
+    });
   }
 } 

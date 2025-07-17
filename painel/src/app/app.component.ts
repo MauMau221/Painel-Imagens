@@ -10,6 +10,7 @@ import { RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
 import { inject } from '@angular/core';
 import { NgIf } from '@angular/common';
+import { PainelApiService } from './services/painel-api.service';
 
 @Component({
   selector: 'app-root',
@@ -33,11 +34,7 @@ export class AppComponent {
   isDarkTheme = false;
   router = inject(Router);
 
-  isHomeRoute() {
-    return this.router.url === '/' || this.router.url === '';
-  }
-
-  constructor() {
+  constructor(private painelApi: PainelApiService) {
     // Carrega preferência do tema ao iniciar
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
@@ -47,19 +44,44 @@ export class AppComponent {
       this.isDarkTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     }
     this.updateTheme();
+    this.loadThemeFromBackend();
+  }
+
+  isHomeRoute() {
+    return this.router.url === '/' || this.router.url === '';
   }
 
   toggleTheme() {
     this.isDarkTheme = !this.isDarkTheme;
     localStorage.setItem('theme', this.isDarkTheme ? 'dark' : 'light');
     this.updateTheme();
+    this.loadThemeFromBackend();
   }
 
   updateTheme() {
     if (this.isDarkTheme) {
       document.body.classList.add('dark-theme');
+      document.documentElement.classList.add('dark-theme');
     } else {
       document.body.classList.remove('dark-theme');
+      document.documentElement.classList.remove('dark-theme');
     }
+  }
+
+  loadThemeFromBackend() {
+    this.painelApi.getConfig().subscribe({
+      next: (config) => {
+        const themeConfig = this.isDarkTheme ? config.themeDark : config.themeLight;
+        
+        if (themeConfig) {
+          Object.keys(themeConfig).forEach(key => {
+            document.documentElement.style.setProperty(key, themeConfig[key]);
+          });
+        }
+      },
+      error: (error) => {
+        console.error('Erro ao carregar tema do backend:', error);
+      }
+    });
   }
 }

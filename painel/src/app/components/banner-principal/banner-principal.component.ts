@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { PainelApiService } from '../../services/painel-api.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-banner-principal',
@@ -14,7 +15,7 @@ export class BannerPrincipalComponent implements OnInit, OnDestroy {
   bannerUrl: string = '';
   bannerMobileUrl: string = '';
   resizeListener: any;
-  backendUrl = 'http://192.168.1.30:3000';
+  backendUrl = environment.backendUrl;
 
   constructor(private painelApi: PainelApiService, private cdr: ChangeDetectorRef) {}
 

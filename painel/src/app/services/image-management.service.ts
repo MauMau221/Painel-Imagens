@@ -35,7 +35,7 @@ export class ImageManagementService {
     {
       id: 'logo',
       path: '/assets/logo.png',
-      alt: 'Logo Linnke',
+      alt: 'Logo',
       component: 'Logo',
       description: 'Logo da empresa',
       currentSrc: '/assets/logo.png'
@@ -91,7 +91,7 @@ export class ImageManagementService {
     {
       id: 'atendente',
       path: '/assets/atendente.png',
-      alt: 'Atendente Linnke',
+      alt: 'Atendente',
       component: 'Contato',
       description: 'Imagem do atendente na seção de contato',
       currentSrc: '/assets/atendente.png'

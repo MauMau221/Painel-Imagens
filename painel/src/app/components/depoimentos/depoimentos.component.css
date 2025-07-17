@@ -1,4 +1,6 @@
 .depoimentos-section {
+  background: var(--bg-depoimentos, #f4f4f4);
+  color: var(--text-depoimentos, #232b3a);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,6 +10,15 @@
   padding: 80px 80px;
   box-sizing: border-box;
   overflow-x: hidden;
+}
+
+.depoimentos-section a, .depoimentos-section a:visited {
+  color: var(--link-depoimentos, #0acde7);
+}
+
+.depoimentos-section button, .depoimentos-section .mat-raised-button {
+  background: var(--accent-depoimentos, #0acde7);
+  color: var(--text-depoimentos, #fff);
 }
 
 .depoimentos-img {

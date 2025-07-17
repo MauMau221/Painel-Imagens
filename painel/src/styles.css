@@ -1,101 +1,24 @@
 /* =========================
-   VARIÁVEIS GLOBAIS (TEMA CLARO)
+   VARIÁVEIS GLOBAIS SIMPLES
    ========================= */
 :root {
-  /* Cores principais */
-  --color-dark-blue: #000018;
-  --color-blue: #026cc8;
-  --color-orange: #0acde7;
-  --color-white: #ffffff;
-  --color-light-gray: #f4f4f4;
-  --color-cyan: #0acde7;
-  --color-cyan-hover: #6de5f5;
-  --color-orange-light: #ffc373;
-  --color-whatsapp-green: #25d366;
-  --color-whatsapp-hover: #20b859;
-
-  /* Gradientes */
-  --gradient-banner: linear-gradient(0deg, var(--color-dark-blue) 0%, var(--color-dark-blue) 100%);
-  --gradient-depoimentos: linear-gradient( var(--color-dark-blue) 100%);
-  --gradient-top-bar: linear-gradient(0deg, var(--color-dark-blue) 0%, var(--color-dark-blue) 100%);
-  --gradient-footer: linear-gradient(0deg, var(--color-dark-blue) 0%, var(--color-dark-blue) 100%);
-  --gradient-planos: linear-gradient(0deg, var(--color-blue) 0%, var(--color-dark-blue) 100%);
-
-  /* Backgrounds utilitários */
-  --bg-primary-orange: var(--color-orange);
-  --bg-orange-hover: var(--color-cyan-hover);
-  --bg-whatsapp-green: var(--color-whatsapp-green);
-  --bg-whatsapp-hover: var(--color-whatsapp-hover);
-  --bg-white: var(--color-white);
-  --bg-light-gray: var(--color-light-gray);
-  --bg-cyan-primary: var(--color-cyan);
-  --bg-cyan-hover: var(--color-cyan-hover);
-  --bg-orange-light: var(--color-orange-light);
-  --bg-dark-blue: var(--gradient-top-bar);
-  --bg-banner: var(--gradient-banner);
-  --bg-planos: var(--gradient-planos);
-  --bg-depoimentos: var(--gradient-depoimentos);
-
-  /* Cores de texto */
-  --text-white: #ffffff;
-  --text-light-gray: #e0e0e0;
-  --text-blue-gray: #757575;
-  --text-orange: #ffffff;
-  --text-medium-gray: #a0a0a0;
-  --text-secondary-gray: #cccccc;
-  --text-dark-gray: #333333;
-  --text-description: #757575;
-
-  /* Cores principais de layout */
   --main-bg-color: #ffffff;
-  --main-text-color: #000000;
-  --main-link-color: #1976d2;
-  --main-button-color: #388e3c;
+  --card-bg-color: #f4f4f4;
+  --primary-color: #0acde7;
+  --secondary-color: #232b3a;
+  --text-color: #181818;
+  --button-color: #0acde7;
+  --button-text-color: #fff;
 }
 
-/* =========================
-   VARIÁVEIS GLOBAIS (TEMA ESCURO)
-   ========================= */
 .dark-theme {
-  --color-dark-blue: #181818;
-  --color-blue: #23234a;
-  --color-orange: #026cc8;
-  --color-white: #181818;
-  --color-light-gray: #23234a;
-  --color-cyan: #0acde7;
-  --color-cyan-hover: #6de5f5;
-  --color-orange-light: #23234a;
-  --color-whatsapp-green: #128c7e;
-  --color-whatsapp-hover: #075e54;
-
-  --gradient-banner: linear-gradient(0deg, var(--color-dark-blue) 0%, var(--color-dark-blue) 100%);
-  --gradient-depoimentos: linear-gradient(180deg, var(--color-blue) 0%, var(--color-blue) 20%, var(--color-dark-blue) 20%, var(--color-dark-blue) 100%);
-  --gradient-top-bar: linear-gradient(0deg, var(--color-dark-blue) 0%, var(--color-dark-blue) 100%);
-  --gradient-footer: linear-gradient(0deg, var(--color-dark-blue) 0%, var(--color-dark-blue) 100%);
-  --gradient-planos: linear-gradient(0deg, var(--color-blue) 0%, var(--color-dark-blue) 100%);
-
-  --bg-primary-orange: var(--color-orange);
-  --bg-orange-hover: var(--color-cyan-hover);
-  --bg-whatsapp-green: var(--color-whatsapp-green);
-  --bg-whatsapp-hover: var(--color-whatsapp-hover);
-  --bg-white: var(--color-white);
-  --bg-light-gray: var(--color-light-gray);
-  --bg-cyan-primary: var(--color-cyan);
-  --bg-cyan-hover: var(--color-cyan-hover);
-  --bg-orange-light: var(--color-orange-light);
-  --bg-dark-blue: var(--gradient-top-bar);
-  --bg-banner: var(--gradient-banner);
-  --bg-planos: var(--gradient-planos);
-  --bg-depoimentos: var(--gradient-depoimentos);
-
-  --text-white: #ffffff;
-  --text-light-gray: #b0bfc7;
-  --text-blue-gray: #6c7a89;
-  --text-orange: #ff8300;
-  --text-medium-gray: #ffffff;
-  --text-secondary-gray: #444444;
-  --text-dark-gray: #e0e0e0;
-  --text-description: #b0bfc7;
+  --main-bg-color: #181c24;
+  --card-bg-color: #232b3a;
+  --primary-color: #0acde7;
+  --secondary-color: #232b3a;
+  --text-color: #f5f6fa;
+  --button-color: #0acde7;
+  --button-text-color: #fff;
 }
 
 /* =========================
@@ -109,7 +32,8 @@ body {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -121,30 +45,54 @@ body {
   font-family: 'Montserrat', sans-serif;
   overflow-x: hidden;
   background: var(--main-bg-color);
-  color: var(--main-text-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
-  color: var(--main-link-color);
+  color: var(--primary-color);
+  transition: color 0.3s ease;
 }
 
-button, .mat-raised-button, .mat-flat-button {
-  background-color: var(--main-button-color) !important;
-  color: #fff !important;
+button,
+.mat-raised-button,
+.mat-flat-button {
+  background-color: var(--button-color) !important;
+  color: var(--button-text-color) !important;
+  transition: background-color 0.3s ease;
+}
+
+/* Utilitários para seções */
+.main-bg, .bg-blue, .bg-orange, .bg-dark {
+  background: var(--main-bg-color) !important;
+}
+.bg-contato {
+  background: var(--card-bg-color) !important;
 }
 
 /* =========================
-   CLASSES DE BACKGROUND UTILITÁRIAS
+          TEMA ESCURO
    ========================= */
-.main-bg {
-  background: var(--bg-banner);
+.dark-theme .container {
+  background: var(--main-bg-color);
 }
-.bg-blue {
-  background: var(--bg-planos);
+
+.dark-theme mat-card {
+  background: var(--secondary-color) !important;
+  color: var(--text-color) !important;
 }
-.bg-orange {
-  background: var(--bg-depoimentos);
+
+.dark-theme .downloads-card {
+  background: var(--secondary-color) !important;
+  color: var(--text-color) !important;
 }
-.bg-dark {
-  background: var(--bg-dark-blue);
+
+.dark-theme .privacidade-section {
+  background: var(--secondary-color) !important;
+  color: var(--text-color) !important;
+}
+
+/* Transições suaves para mudança de tema */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
