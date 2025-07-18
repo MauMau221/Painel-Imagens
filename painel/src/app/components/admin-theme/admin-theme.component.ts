@@ -49,6 +49,9 @@ const THEME_VARIABLES: ThemeVariable[] = [
   { name: '--text-contato', label: 'Texto do Contato', defaultLight: '#181c24', defaultDark: '#f4f4f4' },
   { name: '--link-contato', label: 'Link do Contato', defaultLight: '#0acde7', defaultDark: '#0acde7' },
   { name: '--accent-contato', label: 'Botão/Ícone do Contato', defaultLight: '#25d366', defaultDark: '#25d366' },
+  // Botões do Contato
+  { name: '--btn-whatsapp-bg', label: 'Botões WhatsApp (Contato)', defaultLight: '#25d366', defaultDark: '#25d366' },
+  { name: '--btn-contato-bg', label: 'Botões de Ação (Contato)', defaultLight: '#ff9800', defaultDark: '#ff9800' },
   // Footer
   { name: '--bg-footer', label: 'Fundo do Footer', defaultLight: '#181c24', defaultDark: '#232b3a', isGradient: true },
   { name: '--text-footer', label: 'Texto do Footer', defaultLight: '#ffffff', defaultDark: '#ffffff' },
@@ -167,6 +170,7 @@ export class AdminThemeComponent implements OnInit {
     const groups: { name: string, label: string, variables: ThemeVariable[] }[] = [];
     const map: { [key: string]: { name: string, label: string, variables: ThemeVariable[] } } = {};
     for (const v of THEME_VARIABLES) {
+      // Agrupamento: botões do contato vão junto do grupo 'contato'
       const match = v.name.match(/^--(bg|text|link|accent)-([a-z-]+)/);
       if (match) {
         const comp = match[2];
@@ -176,6 +180,16 @@ export class AdminThemeComponent implements OnInit {
           groups.push(map[comp]);
         }
         map[comp].variables.push(v);
+        // Se for grupo contato, adiciona também as variáveis de botão
+        if (comp === 'contato') {
+          const btnVars = THEME_VARIABLES.filter(x => x.name === '--btn-whatsapp-bg' || x.name === '--btn-contato-bg');
+          for (const btnVar of btnVars) {
+            if (!map[comp].variables.includes(btnVar)) {
+              map[comp].variables.push(btnVar);
+            }
+          }
+        }
+        continue;
       }
     }
     return groups;
