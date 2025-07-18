@@ -185,7 +185,10 @@ h2 {
 
 @media (max-width: 768px) {
     .contato-section {
-        padding: 40px 20px;
+        padding: 40px 10px;
+    }
+    .contato-wrapper {
+        padding: 20px;
     }
     .contato-content {
         flex-direction: column;
