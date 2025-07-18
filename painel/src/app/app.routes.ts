@@ -8,4 +8,8 @@ export const routes: Routes = [
   { path: 'admin-theme', loadComponent: () => import('./components/admin-theme/admin-theme.component').then(m => m.AdminThemeComponent) },
   { path: 'privacidade', loadComponent: () => import('./components/privacidade/privacidade.component').then(m => m.PrivacidadeComponent) },
   { path: 'termos', loadComponent: () => import('./components/termos/termos.component').then(m => m.TermosComponent) },
+  {
+    path: 'admin-edit-links',
+    loadComponent: () => import('./components/edit-links/edit-links.component').then(m => m.EditLinksComponent)
+  },
 ];

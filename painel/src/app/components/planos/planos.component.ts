@@ -20,6 +20,11 @@ export interface Plano {
 export class PlanosComponent implements OnInit {
   backendUrl = environment.backendUrl;
   planos: Plano[] = [];
+  planosLinks: { [key: string]: string } = {
+    plano500: '',
+    plano700: '',
+    plano800: ''
+  };
 
   constructor(private painelApi: PainelApiService) {}
 
@@ -31,6 +36,9 @@ export class PlanosComponent implements OnInit {
         desktop: this.concatUrl(this.backendUrl, p.desktop),
         mobile: p.mobile ? this.concatUrl(this.backendUrl, p.mobile) : undefined
       }));
+      if (config.links && config.links.planos) {
+        this.planosLinks = { ...this.planosLinks, ...config.links.planos };
+      }
     });
   }
 

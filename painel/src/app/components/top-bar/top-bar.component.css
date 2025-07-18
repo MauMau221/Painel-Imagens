@@ -86,7 +86,7 @@
 }
 
 .client-button:hover {
-    background-color: var(--bg-orange-hover);
+    background: var(--btn-top-bar-hover-bg, #0a9be7);
 }
 
 .client-button mat-icon {

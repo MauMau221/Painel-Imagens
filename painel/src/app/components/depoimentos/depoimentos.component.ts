@@ -13,6 +13,9 @@ export class DepoimentosComponent implements OnInit {
   depoimentosUrl: string = '';
   depoimentosMobileUrl: string = '';
   backendUrl = environment.backendUrl;
+  depoimentosLinks = {
+    imagemDepoimentos: ''
+  };
 
   constructor(private painelApi: PainelApiService) {}
 
@@ -20,6 +23,9 @@ export class DepoimentosComponent implements OnInit {
     this.painelApi.getConfig().subscribe(config => {
       this.depoimentosUrl = config.depoimentos ? this.backendUrl + config.depoimentos : '/assets/teste.png';
       this.depoimentosMobileUrl = config.depoimentosMobile ? this.backendUrl + config.depoimentosMobile : '/assets/teste.png';
+      if (config.links && config.links.depoimentos) {
+        this.depoimentosLinks = { ...this.depoimentosLinks, ...config.links.depoimentos };
+      }
     });
   }
 

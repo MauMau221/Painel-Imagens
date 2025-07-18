@@ -16,6 +16,9 @@ export class BannerPrincipalComponent implements OnInit, OnDestroy {
   bannerMobileUrl: string = '';
   resizeListener: any;
   backendUrl = environment.backendUrl;
+  bannerLinks = {
+    saibaMais: ''
+  };
 
   constructor(private painelApi: PainelApiService, private cdr: ChangeDetectorRef) {}
 
@@ -23,6 +26,9 @@ export class BannerPrincipalComponent implements OnInit, OnDestroy {
     this.painelApi.getConfig().subscribe(config => {
       this.bannerUrl = config.banner ? this.backendUrl + config.banner : 'assets/banner.png';
       this.bannerMobileUrl = config.bannerMobile ? this.backendUrl + config.bannerMobile : 'assets/bannerMobile.png';
+      if (config.links && config.links['banner-principal']) {
+        this.bannerLinks = { ...this.bannerLinks, ...config.links['banner-principal'] };
+      }
     });
     this.resizeListener = () => { this.cdr.detectChanges(); };
     window.addEventListener('resize', this.resizeListener);
