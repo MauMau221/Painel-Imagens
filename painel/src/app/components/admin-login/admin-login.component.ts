@@ -27,7 +27,7 @@ import { PainelApiService } from '../../services/painel-api.service';
   styleUrl: './admin-login.component.css'
 })
 export class AdminLoginComponent {
-  username: string = 'admin';
+  username: string = '';
   password: string = '';
   isLoading: boolean = false;
 
