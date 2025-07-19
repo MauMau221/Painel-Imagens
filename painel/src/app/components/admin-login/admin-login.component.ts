@@ -51,7 +51,9 @@ export class AdminLoginComponent {
     this.painelApi.login(this.username, this.password).subscribe({
       next: (response) => {
         this.showMessage('Login realizado com sucesso!', 'success');
-        this.router.navigate(['/admin-images']);
+        setTimeout(() => {
+          window.location.href = '/admin-images';
+        }, 500);
       },
       error: (error) => {
         this.showMessage('Usuário ou senha incorretos!', 'error');

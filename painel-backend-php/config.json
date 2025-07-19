@@ -34,7 +34,7 @@
         "--link-depoimentos": "#ffffff",
         "--accent-depoimentos": "#0acde7",
         "--btn-depoimentos-hover-bg": "#0a9be7",
-        "--bg-contato": "#026ccb",
+        "--bg-contato": "#e0e0e0",
         "--bg-contato-2": "#ffffff",
         "--bg-contato-angle": "180",
         "--text-contato": "#181c24",
@@ -53,12 +53,12 @@
         "--btn-top-bar-hover-bg": "#1c64f2"
     },
     "themeDark": {
-        "--bg-top-bar": "#16b20a",
-        "--bg-top-bar-2": "#1cb20a",
+        "--bg-top-bar": "#142148",
+        "--bg-top-bar-2": "#212b4a",
         "--bg-top-bar-angle": "90",
         "--text-top-bar": "#ffffff",
-        "--link-top-bar": "#c8b90e",
-        "--accent-top-bar": "#fbff00",
+        "--link-top-bar": "#ffffff",
+        "--accent-top-bar": "#0b1d7a",
         "--bg-banner-principal": "#16b20a",
         "--bg-banner-principal-2": "#17a62c",
         "--bg-banner-principal-angle": "180",
@@ -86,7 +86,7 @@
         "--link-depoimentos": "#0acde7",
         "--accent-depoimentos": "#0acde7",
         "--btn-depoimentos-hover-bg": "#0a9be7",
-        "--bg-contato": "#f2fc22",
+        "--bg-contato": "#f0f0f0",
         "--bg-contato-2": "#ffffff",
         "--bg-contato-angle": "180",
         "--text-contato": "#000000",
@@ -99,10 +99,10 @@
         "--bg-footer-2": "#232b3a",
         "--bg-footer-angle": "90",
         "--text-footer": "#000000",
-        "--link-footer": "#0acde7",
+        "--link-footer": "#ffffff",
         "--accent-footer": "#0acde7",
         "--btn-footer-hover-bg": "#0a9be7",
-        "--btn-top-bar-hover-bg": "#0a9be7"
+        "--btn-top-bar-hover-bg": "#174169"
     },
     "planos": [
         {
@@ -119,11 +119,6 @@
             "nome": "800",
             "desktop": "\/uploads\/1752846895-800.png",
             "mobile": ""
-        },
-        {
-            "nome": "teste",
-            "desktop": "\/uploads\/1752870842-500.png",
-            "mobile": ""
         }
     ],
     "vantagens": "\/uploads\/1752867141-bannerLongo.png",
@@ -137,10 +132,9 @@
             "saibaMais": "https:\/\/www.testando.com\/"
         },
         "planos": {
-            "plano500": "https:\/\/teste.com",
+            "plano500": "https:\/\/google.com",
             "plano700": "https:\/\/google.com",
-            "plano800": "https:\/\/teste.com",
-            "planoteste": "https:\/\/teste.com"
+            "plano800": "https:\/\/teste.com"
         },
         "aplicativo": {
             "imagemDepoimentos": "https:\/\/www.ppppp.com\/"

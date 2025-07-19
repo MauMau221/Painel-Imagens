@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './services/auth.guard';
+import { AdminPainelComponent } from './components/admin-painel/admin-painel.component';
 
 export const routes: Routes = [
   { path: 'downloads', loadComponent: () => import('./components/downloads/downloads.component').then(m => m.DownloadsComponent) },
@@ -14,4 +15,5 @@ export const routes: Routes = [
     loadComponent: () => import('./components/edit-links/edit-links.component').then(m => m.EditLinksComponent),
     canActivate: [authGuard]
   },
+  { path: 'admin-painel', loadComponent: () => import('./components/admin-painel/admin-painel.component').then(m => m.AdminPainelComponent), canActivate: [authGuard] },
 ];

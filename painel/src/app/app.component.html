@@ -1,4 +1,4 @@
-<button (click)="toggleTheme()"
+<button *ngIf="isAdminLogged" (click)="toggleTheme()"
   style="position: fixed; top: 16px; left: 146px; z-index: 1000; padding: 8px 16px; border-radius: 8px; border: none; background: var(--bg-primary-orange); color: var(--text-white); cursor: pointer; font-weight: bold;">
   {{ isDarkTheme ? 'Tema Claro' : 'Tema Escuro' }}
 </button>

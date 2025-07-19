@@ -33,6 +33,7 @@ export class AppComponent implements OnInit {
 
   isDarkTheme = false;
   router = inject(Router);
+  isAdminLogged = false;
 
   constructor(private painelApi: PainelApiService) {
     // Remover chamadas duplicadas do construtor
@@ -50,6 +51,16 @@ export class AppComponent implements OnInit {
     }
     this.updateTheme();
     this.loadThemeFromBackend();
+
+    // Verifica se admin está logado
+    this.painelApi.checkAuth().subscribe({
+      next: (res) => {
+        this.isAdminLogged = res && res.authenticated;
+      },
+      error: () => {
+        this.isAdminLogged = false;
+      }
+    });
   }
 
   isHomeRoute() {

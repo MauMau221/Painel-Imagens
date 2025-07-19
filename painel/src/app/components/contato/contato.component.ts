@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PainelApiService } from '../../services/painel-api.service';
 import { environment } from '../../../environments/environment';
 import { MatIconModule } from '@angular/material/icon';
+import { LinksUpdateService } from '../../services/links-update.service';
 
 @Component({
   selector: 'app-contato',
@@ -21,9 +22,16 @@ export class ContatoComponent implements OnInit {
     duvidas: ''
   };
 
-  constructor(private painelApi: PainelApiService) {}
+  constructor(private painelApi: PainelApiService, private linksUpdate: LinksUpdateService) {}
 
   ngOnInit() {
+    this.loadLinks();
+    this.linksUpdate.linksUpdated$.subscribe(() => {
+      this.loadLinks();
+    });
+  }
+
+  loadLinks() {
     this.painelApi.getConfig().subscribe(config => {
       if (config.atendente) {
         this.atendenteUrl = this.backendUrl + config.atendente;

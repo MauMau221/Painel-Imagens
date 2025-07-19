@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { PainelApiService } from '../../services/painel-api.service';
+import { LinksUpdateService } from '../../services/links-update.service';
 
 interface LinkGroup {
   key: string;
@@ -37,14 +38,16 @@ export class EditLinksComponent implements OnInit {
 
   // Labels amigáveis para os grupos
   groupLabels: { [key: string]: string } = {
-    contato: 'Contato',
+    principal: 'Banner-Principal',
     planos: 'Planos',
+    aplicativo: 'Banner-Aplicativo',
+    contato: 'Contato',
     footer: 'Footer',
     depoimentos: 'Depoimentos',
     // Adicione mais se necessário
   };
 
-  constructor(private painelApi: PainelApiService, private snackBar: MatSnackBar) {}
+  constructor(private painelApi: PainelApiService, private snackBar: MatSnackBar, private linksUpdate: LinksUpdateService) {}
 
   ngOnInit() {
     this.painelApi.getAdminConfig().subscribe(config => {
@@ -86,6 +89,7 @@ export class EditLinksComponent implements OnInit {
       next: () => {
         this.isLoading = false;
         this.snackBar.open('Links atualizados com sucesso!', 'Fechar', { duration: 3000, panelClass: ['success-snackbar'] });
+        this.linksUpdate.notifyLinksUpdated();
       },
       error: () => {
         this.isLoading = false;
