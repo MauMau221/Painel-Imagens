@@ -4,7 +4,9 @@
         <p>QUAL VELOCIDADE VOCÊ PREFERE?</p>
     </div>
     <div class="planos-container">
-        <a href="" *ngFor="let plano of planos">
+        <a *ngFor="let plano of planos"
+           [href]="planosLinks['plano' + plano.nome]"
+           target="_blank">
             <div class="plano-card">
                 <div class="image-container">
                     <img [src]="isMobile() && plano.mobile ? plano.mobile : plano.desktop" [alt]="'Plano ' + plano.nome" class="plano-img" />

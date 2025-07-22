@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  backendUrl: 'http://192.168.0.105:8080/painel-backend-php'
+  backendUrl: 'http://localhost/painel-backend-php'
 }; 

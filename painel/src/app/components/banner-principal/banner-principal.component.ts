@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { PainelApiService } from '../../services/painel-api.service';
 import { environment } from '../../../environments/environment';
+import { LinksUpdateService } from '../../services/links-update.service';
 
 @Component({
   selector: 'app-banner-principal',
@@ -16,16 +17,30 @@ export class BannerPrincipalComponent implements OnInit, OnDestroy {
   bannerMobileUrl: string = '';
   resizeListener: any;
   backendUrl = environment.backendUrl;
+  bannerLinks = {
+    saibaMais: ''
+  };
 
-  constructor(private painelApi: PainelApiService, private cdr: ChangeDetectorRef) {}
+  constructor(private painelApi: PainelApiService, private cdr: ChangeDetectorRef, private linksUpdate: LinksUpdateService) {}
 
   ngOnInit() {
-    this.painelApi.getConfig().subscribe(config => {
-      this.bannerUrl = config.banner ? this.backendUrl + config.banner : 'assets/banner.png';
-      this.bannerMobileUrl = config.bannerMobile ? this.backendUrl + config.bannerMobile : 'assets/bannerMobile.png';
+    this.loadLinks();
+    this.linksUpdate.linksUpdated$.subscribe(() => {
+      this.loadLinks();
+      this.cdr.detectChanges();
     });
     this.resizeListener = () => { this.cdr.detectChanges(); };
     window.addEventListener('resize', this.resizeListener);
+  }
+
+  loadLinks() {
+    this.painelApi.getConfig().subscribe(config => {
+      this.bannerUrl = config.banner ? this.backendUrl + config.banner : 'assets/banner.png';
+      this.bannerMobileUrl = config.bannerMobile ? this.backendUrl + config.bannerMobile : 'assets/bannerMobile.png';
+      if (config.links && config.links['banner-principal']) {
+        this.bannerLinks = { ...this.bannerLinks, ...config.links['banner-principal'] };
+      }
+    });
   }
 
   ngOnDestroy() {

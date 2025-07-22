@@ -13,18 +13,27 @@
     color: var(--link-contato, #0acde7);
 }
 
-.whatsapp-button, .action-button, .action-button.sac {
-    background: var(--accent-contato, #25d366);
-    color: var(--text-contato, #fff);
+.whatsapp-button, .action-button.sac {
+    background: var(--btn-whatsapp-bg, #25d366) !important;
+    color: #fff;
+}
+
+.action-button:not(.sac) {
+    background: var(--btn-contato-bg, #ff9800);
+    color: #fff;
 }
 
 .contato-wrapper {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: stretch;
     gap: 60px;
     max-width: 1200px;
     margin: 0 auto;
+    border-radius: 24px;
+    padding: 0px 32px;
+    position: relative;
+    overflow: hidden;
 }
 
 .contato-content {
@@ -83,7 +92,7 @@ h2 {
     border-radius: 15px;
     padding: 30px;
     text-align: left;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
 
 .existing-customer h3 {
@@ -162,18 +171,22 @@ h2 {
 
 @media (max-width: 1200px) {
     .contato-wrapper {
-        align-items: center; /* Centraliza verticalmente quando o layout quebra */
+        align-items: center;
         flex-direction: column;
         gap: 40px;
+        padding: 24px 8px;
     }
     .attendant-image {
-        display: none; /* Esconde a imagem em telas médias para não poluir */
+        display: none;
     }
 }
 
 @media (max-width: 768px) {
     .contato-section {
-        padding: 40px 20px;
+        padding: 40px 10px;
+    }
+    .contato-wrapper {
+        padding: 20px;
     }
     .contato-content {
         flex-direction: column;

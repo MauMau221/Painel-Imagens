@@ -34,26 +34,35 @@ const THEME_VARIABLES: ThemeVariable[] = [
   { name: '--text-planos', label: 'Texto dos Planos', defaultLight: '#232b3a', defaultDark: '#f4f4f4' },
   { name: '--link-planos', label: 'Link dos Planos', defaultLight: '#0acde7', defaultDark: '#0acde7' },
   { name: '--accent-planos', label: 'Botão/Ícone dos Planos', defaultLight: '#0acde7', defaultDark: '#0acde7' },
+  { name: '--btn-planos-hover-bg', label: 'Fundo Hover do Botão/Ícone dos Planos', defaultLight: '#0a9be7', defaultDark: '#0a9be7' },
   // Clube de Vantagens
   { name: '--bg-clube-vantagens', label: 'Fundo do Clube de Vantagens', defaultLight: '#ffffff', defaultDark: '#181c24', isGradient: true },
   { name: '--text-clube-vantagens', label: 'Texto do Clube de Vantagens', defaultLight: '#181c24', defaultDark: '#f4f4f4' },
   { name: '--link-clube-vantagens', label: 'Link do Clube de Vantagens', defaultLight: '#0acde7', defaultDark: '#0acde7' },
   { name: '--accent-clube-vantagens', label: 'Botão/Ícone do Clube de Vantagens', defaultLight: '#0acde7', defaultDark: '#0acde7' },
+  { name: '--btn-clube-vantagens-hover-bg', label: 'Fundo Hover do Botão/Ícone do Clube de Vantagens', defaultLight: '#089bb7', defaultDark: '#089bb7' },
   // Depoimentos
   { name: '--bg-depoimentos', label: 'Fundo dos Depoimentos', defaultLight: '#f4f4f4', defaultDark: '#232b3a', isGradient: true },
   { name: '--text-depoimentos', label: 'Texto dos Depoimentos', defaultLight: '#232b3a', defaultDark: '#f4f4f4' },
   { name: '--link-depoimentos', label: 'Link dos Depoimentos', defaultLight: '#0acde7', defaultDark: '#0acde7' },
   { name: '--accent-depoimentos', label: 'Botão/Ícone dos Depoimentos', defaultLight: '#0acde7', defaultDark: '#0acde7' },
+  { name: '--btn-depoimentos-hover-bg', label: 'Fundo Hover do Botão/Ícone dos Depoimentos', defaultLight: '#0a9be7', defaultDark: '#0a9be7' },
   // Contato
   { name: '--bg-contato', label: 'Fundo do Contato', defaultLight: '#ffffff', defaultDark: '#181c24', isGradient: true },
   { name: '--text-contato', label: 'Texto do Contato', defaultLight: '#181c24', defaultDark: '#f4f4f4' },
   { name: '--link-contato', label: 'Link do Contato', defaultLight: '#0acde7', defaultDark: '#0acde7' },
   { name: '--accent-contato', label: 'Botão/Ícone do Contato', defaultLight: '#25d366', defaultDark: '#25d366' },
+  { name: '--btn-contato-hover-bg', label: 'Fundo Hover do Botão/Ícone do Contato', defaultLight: '#0a9be7', defaultDark: '#0a9be7' },
+  // Botões do Contato
+  { name: '--btn-whatsapp-bg', label: 'Botões WhatsApp (Contato)', defaultLight: '#25d366', defaultDark: '#25d366' },
+  { name: '--btn-contato-bg', label: 'Botões de Ação (Contato)', defaultLight: '#ff9800', defaultDark: '#ff9800' },
   // Footer
   { name: '--bg-footer', label: 'Fundo do Footer', defaultLight: '#181c24', defaultDark: '#232b3a', isGradient: true },
   { name: '--text-footer', label: 'Texto do Footer', defaultLight: '#ffffff', defaultDark: '#ffffff' },
   { name: '--link-footer', label: 'Link do Footer', defaultLight: '#0acde7', defaultDark: '#0acde7' },
   { name: '--accent-footer', label: 'Botão/Ícone do Footer', defaultLight: '#0acde7', defaultDark: '#0acde7' },
+  { name: '--btn-footer-hover-bg', label: 'Fundo Hover do Botão/Ícone do Footer', defaultLight: '#0a9be7', defaultDark: '#0a9be7' },
+  { name: '--btn-top-bar-hover-bg', label: 'Fundo Hover do Botão/Ícone do Top Bar', defaultLight: '#0a9be7', defaultDark: '#0a9be7' },
 ];
 
 // Adicionar variáveis para segunda cor do gradiente e ângulo
@@ -167,6 +176,31 @@ export class AdminThemeComponent implements OnInit {
     const groups: { name: string, label: string, variables: ThemeVariable[] }[] = [];
     const map: { [key: string]: { name: string, label: string, variables: ThemeVariable[] } } = {};
     for (const v of THEME_VARIABLES) {
+      // Agrupamento especial para botões hover
+      if ([
+        '--btn-clube-vantagens-hover-bg',
+        '--btn-planos-hover-bg',
+        '--btn-contato-hover-bg',
+        '--btn-footer-hover-bg',
+        '--btn-top-bar-hover-bg',
+        '--btn-banner-principal-hover-bg',
+        '--btn-depoimentos-hover-bg'
+      ].includes(v.name)) {
+        let comp = '';
+        if (v.name.includes('clube-vantagens')) comp = 'clube-vantagens';
+        if (v.name.includes('planos')) comp = 'planos';
+        if (v.name.includes('contato')) comp = 'contato';
+        if (v.name.includes('footer')) comp = 'footer';
+        if (v.name.includes('top-bar')) comp = 'top-bar';
+        if (v.name.includes('banner-principal')) comp = 'banner-principal';
+        if (v.name.includes('depoimentos')) comp = 'depoimentos';
+        if (!map[comp]) {
+          map[comp] = { name: comp, label: this.getComponentLabel(comp), variables: [] };
+          groups.push(map[comp]);
+        }
+        map[comp].variables.push(v);
+        continue;
+      }
       const match = v.name.match(/^--(bg|text|link|accent)-([a-z-]+)/);
       if (match) {
         const comp = match[2];

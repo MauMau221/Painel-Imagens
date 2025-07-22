@@ -1,10 +1,12 @@
 <section class="banner-container">
   <div class="banner-content">
-    <picture class="image-container">
-      <img *ngIf="isMobile(); else desktopBanner" [src]="bannerMobileUrl" alt="Banner mobile" class="banner-img" />
-      <ng-template #desktopBanner>
-        <img [src]="bannerUrl" alt="Banner principal" class="banner-img" />
-      </ng-template>
-    </picture>
+    <a [href]="bannerLinks.saibaMais" target="_blank">
+      <picture class="image-container">
+        <img *ngIf="isMobile(); else desktopBanner" [src]="bannerMobileUrl" alt="Banner mobile" class="banner-img" />
+        <ng-template #desktopBanner>
+          <img [src]="bannerUrl" alt="Banner principal" class="banner-img" />
+        </ng-template>
+      </picture>
+    </a>
   </div>
 </section>

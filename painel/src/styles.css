@@ -9,6 +9,17 @@
   --text-color: #181818;
   --button-color: #0acde7;
   --button-text-color: #fff;
+  --edit-bg: #fff;
+  --edit-panel-bg: #f6f8fa;
+  --edit-title: #ffffff;
+  --edit-subtitle: #4a5568;
+  --edit-input-bg: #fff;
+  --edit-input-text: #232b3a;
+  --edit-input-placeholder: #888;
+  --edit-card-border: #e0e6ed;
+  --edit-btn-main: #0acde7;
+  --edit-btn-remove: #e53935;
+  --btn-clube-vantagens-hover-bg: #089bb7;
 }
 
 .dark-theme {
@@ -19,6 +30,17 @@
   --text-color: #f5f6fa;
   --button-color: #0acde7;
   --button-text-color: #fff;
+  --edit-bg: #232b3a;
+  --edit-panel-bg: #181c24;
+  --edit-title: #fff;
+  --edit-subtitle: #bfc8e6;
+  --edit-input-bg: #2d3748;
+  --edit-input-text: #fff;
+  --edit-input-placeholder: #bfc8e6;
+  --edit-card-border: #353f54;
+  --edit-btn-main: #0acde7;
+  --edit-btn-remove: #e57373;
+  --btn-clube-vantagens-hover-bg: #089bb7;
 }
 
 /* =========================

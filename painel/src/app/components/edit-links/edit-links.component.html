@@ -1,0 +1,30 @@
+<div class="edit-links-container">
+  <mat-card class="edit-links-card">
+    <mat-card-header>
+      <mat-card-title>Painel de Edição de Links</mat-card-title>
+      <mat-card-subtitle>Altere os links de todos os componentes do site</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="saveLinks()" class="edit-links-form">
+        <div class="save-btn-wrapper">
+          <button mat-raised-button color="primary" type="submit" [disabled]="isLoading">
+            {{ isLoading ? 'Salvando...' : 'Salvar Links' }}
+          </button>
+        </div>
+        <ng-container *ngFor="let group of linkGroups">
+          <mat-card class="component-card">
+            <mat-card-title class="component-title">{{ group.label }}</mat-card-title>
+            <div class="color-row-group">
+              <div *ngFor="let key of getLinkKeys(group); trackBy: trackByKey" class="color-row">
+                <mat-form-field appearance="outline">
+                  <mat-label>{{ key | titlecase }}</mat-label>
+                  <input matInput [(ngModel)]="group.links[key]" [name]="group.key + '-' + key" placeholder="https://..." required />
+                </mat-form-field>
+              </div>
+            </div>
+          </mat-card>
+        </ng-container>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div> 
