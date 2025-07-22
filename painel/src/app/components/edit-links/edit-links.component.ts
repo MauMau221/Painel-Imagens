@@ -45,6 +45,7 @@ export class EditLinksComponent implements OnInit {
     footer: 'Footer',
     depoimentos: 'Depoimentos',
     'clube-vantagens': 'Clube-Vantagens',
+    'top-bar': 'Top Bar',
     // Adicione mais se necessário
   };
 

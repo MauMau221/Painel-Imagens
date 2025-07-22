@@ -125,16 +125,20 @@
     "atendente": "\/uploads\/1752847120-atendente.png",
     "vantagensMobile": "\/uploads\/1752847121-bannerMobile.png",
     "depoimentosMobile": "\/uploads\/1752847122-bannerMobile.png",
-    "depoimentos": "\/uploads\/1753208061-testee.png",
+    "depoimentos": "\/uploads\/1753212185-teste.png",
     "bannerMobile": "\/uploads\/1752847124-bannerMobile.png",
     "links": {
+        "top-bar": {
+            "login": "https:\/\/pix.jasgab.com.br"
+        },
         "principal": {
             "saibaMais": "https:\/\/www.facebook.com\/"
         },
         "planos": {
             "plano500": "https:\/\/youtube.com",
             "plano700": "https:\/\/google.com",
-            "plano800": "https:\/\/teste.com"
+            "plano800": "https:\/\/teste.com",
+            "planoTeste": "https:\/\/teste.com"
         },
         "clube-vantagens": {
             "participe": "https:\/\/www.clubesims.com.br\/"
@@ -146,7 +150,7 @@
             "whatsapp": "https:\/\/api.whatsapp.com\/send?phone=5511982288808",
             "sac": "https:\/\/api.whatsapp.com\/send?phone=5511982288808",
             "boleto": "https:\/\/pix.jasgab.com.br",
-            "cliente": "https:\/\/pix.jasgab.com.br",
+            "cliente": "https:\/\/api.jasgab.hubsoft.com.br\/central\/login",
             "duvidas": "https:\/\/api.whatsapp.com\/send?phone=5511982288808"
         },
         "footer": {
