@@ -1,5 +1,7 @@
 <section class="clube-vantagens-section">
-  <picture class="image-container">
-    <img [src]="isMobile() && vantagensMobileUrl ? vantagensMobileUrl : vantagensUrl" alt="Vantagens do Clube" class="vantagens-image" />
-  </picture>
+  <a [href]="clubeLinks.participe" target="_blank">
+    <picture class="image-container">
+      <img [src]="isMobile() && vantagensMobileUrl ? vantagensMobileUrl : vantagensUrl" alt="Vantagens do Clube" class="vantagens-image" />
+    </picture>
+  </a>
 </section>

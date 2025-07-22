@@ -37,8 +37,8 @@ export class BannerPrincipalComponent implements OnInit, OnDestroy {
     this.painelApi.getConfig().subscribe(config => {
       this.bannerUrl = config.banner ? this.backendUrl + config.banner : 'assets/banner.png';
       this.bannerMobileUrl = config.bannerMobile ? this.backendUrl + config.bannerMobile : 'assets/bannerMobile.png';
-      if (config.links && config.links['banner-principal']) {
-        this.bannerLinks = { ...this.bannerLinks, ...config.links['banner-principal'] };
+      if (config.links && config.links.principal) {
+        this.bannerLinks = { ...this.bannerLinks, ...config.links.principal };
       }
     });
   }

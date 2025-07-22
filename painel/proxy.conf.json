@@ -1,0 +1,8 @@
+{
+  "/painel-backend-php/*": {
+    "target": "http://localhost",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+} 

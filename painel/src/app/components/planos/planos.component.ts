@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { PainelApiService } from '../../services/painel-api.service';
 import { environment } from '../../../environments/environment';
+import { LinksUpdateService } from '../../services/links-update.service';
 
 export interface Plano {
   nome: string;
@@ -26,9 +27,16 @@ export class PlanosComponent implements OnInit {
     plano800: ''
   };
 
-  constructor(private painelApi: PainelApiService) {}
+  constructor(private painelApi: PainelApiService, private linksUpdate: LinksUpdateService) {}
 
   ngOnInit() {
+    this.loadLinks();
+    this.linksUpdate.linksUpdated$.subscribe(() => {
+      this.loadLinks();
+    });
+  }
+
+  loadLinks() {
     this.painelApi.getConfig().subscribe(config => {
       // Agora busca do array 'planos' do config
       this.planos = (config.planos || []).map((p: any) => ({

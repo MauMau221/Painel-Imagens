@@ -36,8 +36,7 @@ export class AppComponent implements OnInit {
   isAdminLogged = false;
 
   constructor(private painelApi: PainelApiService) {
-    // Remover chamadas duplicadas do construtor
-    // A lógica será feita no ngOnInit
+
   }
 
   ngOnInit() {

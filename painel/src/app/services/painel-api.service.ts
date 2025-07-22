@@ -4,11 +4,8 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class PainelApiService {
-<<<<<<< HEAD
-  private apiUrl = 'http://192.168.0.105:8080/painel-backend-php'; // Troque pelo endereço do seu backend
-=======
-  private apiUrl = 'http://localhost/painel-backend-php'; // Troque pelo endereço do seu backend
->>>>>>> 5c8a921c6bf2251d2c2111fecbc96de31ec8319c
+  // Usar proxy para evitar problemas de CORS
+  private apiUrl = '/painel-backend-php';
 
   constructor(private http: HttpClient) {}
 
@@ -31,6 +28,7 @@ export class PainelApiService {
     return this.http.post(`${this.apiUrl}/upload.php`, formData, { withCredentials: true });
   }
 
+  // Métodos públicos (sem credenciais)
   getConfig(): Observable<any> {
     return this.http.get(`${this.apiUrl}/config-get.php`);
   }
@@ -40,6 +38,7 @@ export class PainelApiService {
     return this.http.get(`${this.apiUrl}/config-get.php`);
   }
 
+  // Método que requer autenticação
   updateConfig(config: any): Observable<any> {
     return this.http.post(`${this.apiUrl}/config-set.php`, config, { withCredentials: true });
   }

@@ -14,6 +14,15 @@
 
 .clube-vantagens-section a, .clube-vantagens-section a:visited {
     color: var(--link-clube-vantagens, #0acde7);
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.clube-vantagens-section a:hover {
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
 }
 
 .clube-vantagens-section button, .clube-vantagens-section .mat-raised-button {

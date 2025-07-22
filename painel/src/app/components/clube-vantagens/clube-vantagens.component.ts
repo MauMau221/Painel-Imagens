@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { PainelApiService } from '../../services/painel-api.service';
 import { environment } from '../../../environments/environment';
@@ -6,7 +7,7 @@ import { LinksUpdateService } from '../../services/links-update.service';
 
 @Component({
   selector: 'app-clube-vantagens',
-  imports: [MatIconModule],
+  imports: [CommonModule, MatIconModule],
   templateUrl: './clube-vantagens.component.html',
   styleUrl: './clube-vantagens.component.css'
 })

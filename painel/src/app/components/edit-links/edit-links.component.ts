@@ -40,10 +40,11 @@ export class EditLinksComponent implements OnInit {
   groupLabels: { [key: string]: string } = {
     principal: 'Banner-Principal',
     planos: 'Planos',
-    aplicativo: 'Banner-Aplicativo',
+    aplicativo: 'Depoimentos',
     contato: 'Contato',
     footer: 'Footer',
     depoimentos: 'Depoimentos',
+    'clube-vantagens': 'Clube-Vantagens',
     // Adicione mais se necessário
   };
 
@@ -69,9 +70,11 @@ export class EditLinksComponent implements OnInit {
             links: planosLinks
           };
         }
+        // Mapeia "aplicativo" para "depoimentos" na interface
+        const displayKey = key === 'aplicativo' ? 'depoimentos' : key;
         return {
-          key,
-          label: this.groupLabels[key] || key,
+          key: displayKey,
+          label: this.groupLabels[displayKey] || displayKey,
           links: { ...allLinks[key] }
         };
       });
@@ -83,7 +86,9 @@ export class EditLinksComponent implements OnInit {
     // Monta objeto links para salvar
     const linksToSave: { [key: string]: { [key: string]: string } } = {};
     this.linkGroups.forEach(group => {
-      linksToSave[group.key] = { ...group.links };
+      // Mapeia "depoimentos" de volta para "aplicativo" ao salvar
+      const saveKey = group.key === 'depoimentos' ? 'aplicativo' : group.key;
+      linksToSave[saveKey] = { ...group.links };
     });
     this.painelApi.updateConfig({ links: linksToSave }).subscribe({
       next: () => {
