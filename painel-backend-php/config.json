@@ -53,20 +53,20 @@
         "--btn-top-bar-hover-bg": "#1c64f2"
     },
     "themeDark": {
-        "--bg-top-bar": "#142148",
+        "--bg-top-bar": "#083bd4",
         "--bg-top-bar-2": "#212b4a",
-        "--bg-top-bar-angle": "90",
+        "--bg-top-bar-angle": "180",
         "--text-top-bar": "#ffffff",
         "--link-top-bar": "#ffffff",
-        "--accent-top-bar": "#0b1d7a",
-        "--bg-banner-principal": "#16b20a",
-        "--bg-banner-principal-2": "#17a62c",
+        "--accent-top-bar": "#1ac13c",
+        "--bg-banner-principal": "#d7370f",
+        "--bg-banner-principal-2": "#1441c8",
         "--bg-banner-principal-angle": "180",
         "--text-banner-principal": "#f4f4f4",
         "--link-banner-principal": "#0acde7",
         "--accent-banner-principal": "#0acde7",
-        "--bg-planos": "#17a62c",
-        "--bg-planos-2": "#0f51cc",
+        "--bg-planos": "#1441c8",
+        "--bg-planos-2": "#1441c8",
         "--bg-planos-angle": "180",
         "--text-planos": "#f4f4f4",
         "--link-planos": "#0acde7",
@@ -102,7 +102,7 @@
         "--link-footer": "#ffffff",
         "--accent-footer": "#0acde7",
         "--btn-footer-hover-bg": "#0a9be7",
-        "--btn-top-bar-hover-bg": "#174169"
+        "--btn-top-bar-hover-bg": "#0f76d7"
     },
     "planos": [
         {
@@ -125,26 +125,29 @@
     "atendente": "\/uploads\/1752847120-atendente.png",
     "vantagensMobile": "\/uploads\/1752847121-bannerMobile.png",
     "depoimentosMobile": "\/uploads\/1752847122-bannerMobile.png",
-    "depoimentos": "\/uploads\/1752867145-teste.png",
+    "depoimentos": "\/uploads\/1753208061-testee.png",
     "bannerMobile": "\/uploads\/1752847124-bannerMobile.png",
     "links": {
         "principal": {
-            "saibaMais": "https:\/\/www.testando.com\/"
+            "saibaMais": "https:\/\/www.facebook.com\/"
         },
         "planos": {
-            "plano500": "https:\/\/google.com",
+            "plano500": "https:\/\/youtube.com",
             "plano700": "https:\/\/google.com",
             "plano800": "https:\/\/teste.com"
+        },
+        "clube-vantagens": {
+            "participe": "https:\/\/www.clubesims.com.br\/"
         },
         "aplicativo": {
             "imagemDepoimentos": "https:\/\/www.ppppp.com\/"
         },
         "contato": {
             "whatsapp": "https:\/\/api.whatsapp.com\/send?phone=5511982288808",
-            "sac": "https:\/\/pix.jasgab.com.br",
+            "sac": "https:\/\/api.whatsapp.com\/send?phone=5511982288808",
             "boleto": "https:\/\/pix.jasgab.com.br",
             "cliente": "https:\/\/pix.jasgab.com.br",
-            "duvidas": "https:\/\/pix.jasgab.com.br"
+            "duvidas": "https:\/\/api.whatsapp.com\/send?phone=5511982288808"
         },
         "footer": {
             "inicio": "#",
