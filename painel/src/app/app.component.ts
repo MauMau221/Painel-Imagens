@@ -7,6 +7,7 @@ import { ContatoComponent } from './components/contato/contato.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { CookiePolicyComponent } from './components/cookie-policy/cookie-policy.component';
+import { MobileAppBannerComponent } from './components/mobile-app-banner/mobile-app-banner.component';
 import { RouterOutlet } from '@angular/router';
 import { Router } from '@angular/router';
 import { inject } from '@angular/core';
@@ -24,6 +25,7 @@ import { PainelApiService } from './services/painel-api.service';
     ContatoComponent,
     FooterComponent,
     CookiePolicyComponent,
+    MobileAppBannerComponent,
     RouterOutlet,
     NgIf
   ],

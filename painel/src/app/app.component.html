@@ -1,8 +1,9 @@
-<button *ngIf="isAdminLogged" (click)="toggleTheme()"
-  style="position: fixed; top: 16px; left: 146px; z-index: 1000; padding: 8px 16px; border-radius: 8px; border: none; background: var(--bg-primary-orange); color: var(--text-white); cursor: pointer; font-weight: bold;">
+<button *ngIf="isAdminLogged" (click)="toggleTheme()" class="admin-theme-button"
+  style="position: fixed; top: 76px; left: 146px; z-index: 1001; padding: 8px 16px; border-radius: 8px; border: none; background: var(--bg-primary-orange); color: var(--text-white); cursor: pointer; font-weight: bold;">
   {{ isDarkTheme ? 'Tema Claro' : 'Tema Escuro' }}
 </button>
 <div class="home-container">
+  <app-mobile-app-banner></app-mobile-app-banner>
   <div class="bg-dark">
     <app-top-bar></app-top-bar>
   </div>

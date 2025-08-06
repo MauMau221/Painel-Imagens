@@ -50,12 +50,29 @@ export class AdminLoginComponent {
     this.isLoading = true;
     this.painelApi.login(this.username, this.password).subscribe({
       next: (response) => {
+        console.log('Resposta do login:', response);
         this.showMessage('Login realizado com sucesso!', 'success');
-        setTimeout(() => {
-          window.location.href = '/admin-images';
-        }, 500);
+        this.isLoading = false;
+        
+        // Verifica se o login foi bem-sucedido
+        if (response && response.success) {
+          console.log('Login bem-sucedido, redirecionando para admin-painel...');
+          setTimeout(() => {
+            this.router.navigate(['/admin-painel']).then(() => {
+              console.log('Redirecionamento para admin-painel realizado com sucesso');
+            }).catch((error) => {
+              console.error('Erro no redirecionamento:', error);
+              // Fallback caso o redirecionamento falhe
+              window.location.href = '/admin-painel';
+            });
+          }, 500);
+        } else {
+          console.error('Login falhou - resposta inválida:', response);
+          this.showMessage('Erro no login. Tente novamente.', 'error');
+        }
       },
       error: (error) => {
+        console.error('Erro no login:', error);
         this.showMessage('Usuário ou senha incorretos!', 'error');
         this.isLoading = false;
       }
