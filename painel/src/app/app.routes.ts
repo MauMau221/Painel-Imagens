@@ -16,4 +16,5 @@ export const routes: Routes = [
     canActivate: [authGuard]
   },
   { path: 'admin-painel', loadComponent: () => import('./components/admin-painel/admin-painel.component').then(m => m.AdminPainelComponent), canActivate: [authGuard] },
+  { path: 'politica-cookies', loadComponent: () => import('./components/cookie-policy-page/cookie-policy-page.component').then(m => m.CookiePolicyPageComponent) },
 ];

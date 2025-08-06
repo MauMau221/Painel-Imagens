@@ -1,0 +1,16 @@
+<div *ngIf="showCookieBanner" class="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <p>
+        Este site armazena dados como cookies para habilitar funcionalidades essenciais do site, 
+        bem como marketing, personalização e análises.
+        <a routerLink="/politica-cookies" class="cookie-link">Política de Cookies</a>
+      </p>
+    </div>
+    <div class="cookie-actions">
+      <button (click)="acceptCookies()" class="accept-button">
+        Fechar
+      </button>
+    </div>
+  </div>
+</div> 
