@@ -1,7 +1,7 @@
 export const APP_CONFIG = {
   // Links para download dos apps
   appStore: {
-    url: 'https://apps.apple.com/br/app/jasgab-telecom/id123456789',
+    url: 'https://apps.apple.com/br/app/jasgab/id1559245103',
     name: 'App Store'
   },
   playStore: {

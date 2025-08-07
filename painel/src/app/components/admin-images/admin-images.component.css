@@ -4,7 +4,6 @@ body {
 }
 
 .admin-container {
-  /* Removido o background para evitar faixas brancas nas laterais */
   padding: 32px 12px;
   max-width: 1300px;
   margin: 0 auto;
@@ -347,7 +346,6 @@ button[mat-icon-button][color="warn"]:hover {
   color: #fff;
 }
 
-/* Botões sólidos para toda a interface */
 .select-btn, .upload-btn, .add-plano-form button, .plano-upload-item button[mat-raised-button] {
   background: var(--color-cyan);
   color: #fff;
@@ -369,12 +367,10 @@ button[mat-icon-button][color="warn"]:hover {
   cursor: not-allowed;
 }
 
-/* Ajustes para inputs de arquivo e botões dentro dos cards de planos */
 .plano-upload-item input[type="file"] {
   margin-bottom: 8px;
 }
 
-/* Remove gradientes antigos dos botões */
 .select-btn, .upload-btn {
   background: var(--color-cyan) !important;
 }

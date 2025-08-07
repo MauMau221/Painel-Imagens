@@ -30,6 +30,7 @@ interface AdminPlano {
 }
 
 const IMAGES: { key: string; label: string }[] = [
+  { key: 'logo', label: 'Logo Principal' },
   { key: 'banner', label: 'Banner Principal (Desktop)' },
   { key: 'bannerMobile', label: 'Banner Principal (Mobile)' },
   { key: 'depoimentos', label: 'Imagem Depoimentos (Desktop)' },

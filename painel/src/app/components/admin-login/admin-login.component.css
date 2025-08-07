@@ -55,7 +55,6 @@
   margin-right: 8px;
 }
 
-/* Snackbar customizations */
 ::ng-deep .success-snackbar {
   background: #4caf50;
   color: white;

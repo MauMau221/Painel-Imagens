@@ -54,7 +54,6 @@ export class AdminLoginComponent {
         this.showMessage('Login realizado com sucesso!', 'success');
         this.isLoading = false;
         
-        // Verifica se o login foi bem-sucedido
         if (response && response.success) {
           console.log('Login bem-sucedido, redirecionando para admin-painel...');
           setTimeout(() => {
@@ -62,7 +61,6 @@ export class AdminLoginComponent {
               console.log('Redirecionamento para admin-painel realizado com sucesso');
             }).catch((error) => {
               console.error('Erro no redirecionamento:', error);
-              // Fallback caso o redirecionamento falhe
               window.location.href = '/admin-painel';
             });
           }, 500);
